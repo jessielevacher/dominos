@@ -15,6 +15,20 @@ Domino::Domino(const int vI,const int vS){ //constructeur
 
 }
 
-int compte::getValInf() const{
-	return numero;
+int Domino::getValInf() const{
+	return valInf;
 }
+
+void Domino::setValInf(const int vI) {
+	valSup=vI;
+}
+
+int Domino::getValSup() const{
+	return valSup;
+}
+
+void Domino::setValSup(const int vS) {
+	valSup=vS;
+}
+
+
