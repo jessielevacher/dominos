@@ -23,9 +23,9 @@ class Domino{
 	public:
 		Domino(const int,const int); //const= le paramètre du constructeur ne sera pas modifié
 		int getValInf() const;
-		void setValInf();
+		void setValInf(const int);
 		int getValSup() const;
-		setValSup(const int);
+		void setValSup(const int);
 };
 
 
