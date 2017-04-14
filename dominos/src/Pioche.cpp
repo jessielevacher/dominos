@@ -6,11 +6,20 @@
  */
 
 #include "Pioche.hpp"
+#include "Domino.hpp"
 
 int Pioche::nbDominos = 28;
 
 Pioche::Pioche(){
+	dominosPioche = new vector<Domino>();
 
+	// On crée la pioche en créant tous les dominos
+	for (int i=0; i < 7; i++){
+		for (int j=0; j < 7; j++){
+			Domino d(i,j);
+			dominosPioche->push_back(d);
+		}
+	}
 }
 
 int Pioche::getNbDominos(){
