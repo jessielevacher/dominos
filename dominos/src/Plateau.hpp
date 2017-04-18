@@ -7,15 +7,19 @@
 
 #ifndef PLATEAU_HPP_
 #define PLATEAU_HPP_
+
+#include <vector>
 #include <string>
+#include "Domino.hpp"
 using namespace std;
 
-class Plateau {
+class Plateau{
 private :
 	int valInf;
 	int valSup;
 public :
-	Plateau();
+	vector<Domino>* dominosPlateau;
+	Plateau(Domino d);
 	int getValInf() const;
 	void setValInf(int);
 	int getValSup();
@@ -24,3 +28,5 @@ public :
 	void modifierBorne(int);
 	bool verifierCompatiblite(int);
 };
+
+#endif /* PLATEAU_HPP_ */

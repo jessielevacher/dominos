@@ -6,13 +6,19 @@
  */
 
 #include "JoueurDomino.hpp"
+#include "Pioche.hpp"
+#include "Domino.hpp"
+
+using namespace std;
 
 JoueurDomino::JoueurDomino(){
 	pseudo="null";
 	main=false;
 	nbDominosRestants=0;
 	gagne=false;
+	listeDominos=new vector<Domino>();;
 }
+
 
 string JoueurDomino::getPseudo() {
 	return pseudo;
@@ -49,7 +55,7 @@ void JoueurDomino::setGagne(bool g) {
 void JoueurDomino::saisirPseudo() {
 	string id;
 	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
-	cin << id;
+	cin >> id;
 	setPseudo(id);
 }
 
@@ -60,6 +66,23 @@ void JoueurDomino::distribuerDominos(Pioche p){
 void JoueurDomino::deposerDomino() {
 
 }
-void retirerDominoMain(Domino d);
-void piocher();
-void ajouterDominoMain(Domino d);
+void JoueurDomino::retirerDominoMain(Domino d){
+
+}
+void JoueurDomino::piocher(){
+
+}
+void JoueurDomino::ajouterDominoMain(Domino d){
+
+}
+
+bool JoueurDomino::doubleExiste(){
+	bool a="True";
+			return a;
+}
+
+Domino JoueurDomino::plusGrandDouble(){
+	Domino d(0,0);
+	return d;
+}
+

@@ -29,5 +29,3 @@ int Pioche::getNbDominos(){
 void Pioche::setNbDominos(int nb){
 	nbDominos = nb;
 }
-
-

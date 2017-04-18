@@ -19,15 +19,15 @@ using namespace std;
 #include "Plateau.hpp"
 #include "JoueurDomino.hpp"
 #include "Pioche.hpp"
-
+#include "Domino.hpp"
 
 class JeuDomino{
 	private:
-		Plateau plateau;
 		JoueurDomino joueur;
 		JoueurDomino jOrdi;
 		JoueurDomino main;
 		Pioche pioche;
+		//Plateau plateau;
 
 	public:
 		JeuDomino();
@@ -36,7 +36,11 @@ class JeuDomino{
 		void piocher();
 		void verifierFinJeu();
 		void jouerUnTour();
-
+		void tourOrdi();
+		void attribuerMain();
+		JoueurDomino joueurAyantPlusGrandDouble(JoueurDomino, Domino, JoueurDomino, Domino);
+		void affichageEcranJoueur();
+		void affichageEcranOrdi();
 };
 
 

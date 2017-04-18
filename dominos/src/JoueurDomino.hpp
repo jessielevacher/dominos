@@ -9,10 +9,13 @@
 #define SRC_JOUEURDOMINO_HPP_
 
 #include <string>
+#include <vector>
+#include "Pioche.hpp"
+#include "Domino.hpp"
 
 using namespace std;
 
-class JoueurDomino {
+class JoueurDomino{
 
 private :
 	string pseudo;
@@ -21,21 +24,25 @@ private :
 	bool gagne;
 
 public :
+	vector<Domino>* listeDominos;
 	JoueurDomino();
 	string getPseudo();
-	void setPseudo(string p);
+	void setPseudo(string);
 	bool getMain();
-	void setMain(bool m);
+	void setMain(bool);
 	int getNbDominosRestants();
-	void setNbDominosRestants(int n);
+	void setNbDominosRestants(int);
 	bool getGagne();
-	void setGagne(bool g);
+	void setGagne(bool);
 	void saisirPseudo();
-	void distribuerDominos(Pioche p);
+	void distribuerDominos(Pioche);
 	void deposerDomino();
-	void retirerDominoMain(Domino d);
+	void retirerDominoMain(Domino);
 	void piocher();
-	void ajouterDominoMain(Domino d);
+	void ajouterDominoMain(Domino);
+
+	bool doubleExiste();
+	Domino plusGrandDouble();
 };
 
 
