@@ -12,11 +12,10 @@
 
 JeuDomino::JeuDomino(){ //constructeur
 /*	Domino d(0,0);
-	Plateau p(d);
+	//Plateau p(d);
 	JoueurDomino j1;
 	Pioche pi;
 
-	 plateau=new Plateau p(d);
 	 joueur=j1;
 	 jOrdi=j1;
 	 main=j1;
@@ -30,6 +29,7 @@ JeuDomino::JeuDomino(){ //constructeur
 
 	//On crée un premier joueur
 		JoueurDomino j1; //joueur anonyme tout d'abord
+
 		//On affecte à l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
 		cout << " Veuillez entrer le pseudo sous lequel vous souhaitez jouer : " << endl;
 		string pseudo;
@@ -41,13 +41,31 @@ JeuDomino::JeuDomino(){ //constructeur
 		JoueurDomino j2;
 		j2.setPseudo("ordi");
 		jOrdi=j2;
-
+/*
 	//On distribue les 7 dominos nécessaire au début de la partie à chacun des deux joueurs
 		joueur.distribuerDominos(pi);
 		jOrdi.distribuerDominos(pi);
+*/
+		Domino d1(0,0);
+				for(int i=0;i<7;++i){
+						d1.setValInf(i);
+						d1.setValSup(i);
+					jOrdi.ajouterDominoMain(d1);
+
+					}
+
+					for(int i=0;i<6;++i){
+							d1.setValInf(i+1);
+							d1.setValSup(i);
+						joueur.ajouterDominoMain(d1);
+
+						}
+					d1.setValInf(2);
+					d1.setValSup(0);
+					jOrdi.ajouterDominoMain(d1);
 
 	//On attribut la main au premier tour à un des 2 joueurs
-		attribuerMain();
+	attribuerMain();
 
 
 	//On crée un plateau contenant un unique domino,
@@ -60,12 +78,12 @@ JeuDomino::JeuDomino(){ //constructeur
 			if (main.getPseudo()==joueur.getPseudo())
 			{
 				d=joueur.plusGrandDouble();
-				joueur.retirerDominoMain(d);
+				//joueur.retirerDominoMain(d);
 			}
 			else
 			{
 				d=jOrdi.plusGrandDouble();
-				jOrdi.retirerDominoMain(d);
+				//jOrdi.retirerDominoMain(d);
 			}
 		}
 		else
@@ -75,87 +93,114 @@ JeuDomino::JeuDomino(){ //constructeur
 			if (main.getPseudo()==joueur.getPseudo())
 					{
 						d=joueur.listeDominos->at(0);
-						joueur.retirerDominoMain(d);
+						//joueur.retirerDominoMain(d);
 					}
 					else
 					{
 						d=jOrdi.listeDominos->at(0);
-						jOrdi.retirerDominoMain(d);
+						//jOrdi.retirerDominoMain(d);
 					}
 
 		}
-		/*Plateau p(d);
-		plateau=p;*/
+
+		Plateau p;
+		plateau=p;
+		plateau.setValInf(d.getValInf());
+		plateau.setValSup(d.getValSup());
+		plateau.dominosPlateau->push_back(d);
 
 
 }
 
 
 //A TESTER
-void JeuDomino::lancerJeu(){ //pas fait
+void JeuDomino::lancerJeu(){
 
-//on crée une pioche
-	Pioche pi;
-	pioche=pi;
+	//on crée une pioche
+		Pioche pi;
+		pioche=pi;
 
-//On crée un premier joueur
-	JoueurDomino j1; //joueur anonyme tout d'abord
-	//On affecte à l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
-	cout << " Veuillez entrer le pseudo sous lequel vous souhaitez jouer : " << endl;
-	string pseudo;
-	cin >> pseudo ;
-	j1.setPseudo(pseudo);
-	joueur=j1;
+	//On crée un premier joueur
+		JoueurDomino j1; //joueur anonyme tout d'abord
 
-//Puis on crée un joueur artificiel, qui sera joué par l'ordinateur
-	JoueurDomino j2;
-	j2.setPseudo("ordi");
-	jOrdi=j2;
+		//On affecte à l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
+		cout << " Veuillez entrer le pseudo sous lequel vous souhaitez jouer : " << endl;
+		string pseudo;
+		cin >> pseudo ;
+		j1.setPseudo(pseudo);
+		joueur=j1;
 
-//On distribue les 7 dominos nécessaire au début de la partie à chacun des deux joueurs
-	joueur.distribuerDominos(pi);
-	jOrdi.distribuerDominos(pi);
+	//Puis on crée un joueur artificiel, qui sera joué par l'ordinateur
+		JoueurDomino j2;
+		j2.setPseudo("ordi");
+		jOrdi=j2;
+/*
+	//On distribue les 7 dominos nécessaire au début de la partie à chacun des deux joueurs
+		joueur.distribuerDominos(pi);
+		jOrdi.distribuerDominos(pi);
+*/
+		Domino d1(0,0);
+				for(int i=0;i<7;++i){
+						d1.setValInf(i);
+						d1.setValSup(i);
+					jOrdi.ajouterDominoMain(d1);
 
-//On attribut la main au premier tour à un des 2 joueurs
+					}
+
+					for(int i=0;i<6;++i){
+							d1.setValInf(i+1);
+							d1.setValSup(i);
+						joueur.ajouterDominoMain(d1);
+
+						}
+					d1.setValInf(2);
+					d1.setValSup(0);
+					jOrdi.ajouterDominoMain(d1);
+
+	//On attribut la main au premier tour à un des 2 joueurs
 	attribuerMain();
 
 
-//On crée un plateau contenant un unique domino,
-	//Déterminons le domino à déposer en premier :
+	//On crée un plateau contenant un unique domino,
+		//Déterminons le domino à déposer en premier :
 
-	 // c'est à dire le domino ayant permis au joueur de gagner la main
-	Domino d(0,0);
-	if (main.doubleExiste())
-	{
-		if (main.getPseudo()==joueur.getPseudo())
+		 // c'est à dire le domino ayant permis au joueur de gagner la main
+		Domino d(0,0);
+		if (main.doubleExiste())
 		{
-			d=joueur.plusGrandDouble();
-			joueur.retirerDominoMain(d);
+			if (main.getPseudo()==joueur.getPseudo())
+			{
+				d=joueur.plusGrandDouble();
+				//joueur.retirerDominoMain(d);
+			}
+			else
+			{
+				d=jOrdi.plusGrandDouble();
+				//jOrdi.retirerDominoMain(d);
+			}
 		}
 		else
+		 //ou Un domino aléatoire de la main du joueur ayant la main au premier tour si le joueur a dû être choisi aléatoirement
+		 	 	 //On prend le premier domino, de sa main, ce qui reste aléatoire puisqu'ils ont été distribués aléatoirement
 		{
-			d=jOrdi.plusGrandDouble();
-			jOrdi.retirerDominoMain(d);
-		}
-	}
-	else
-	 //ou Un domino aléatoire de la main du joueur ayant la main au premier tour si le joueur a dû être choisi aléatoirement
-	 	 	 //On prend le premier domino, de sa main, ce qui reste aléatoire puisqu'ils ont été distribués aléatoirement
-	{
-		if (main.getPseudo()==joueur.getPseudo())
-				{
-					d=joueur.listeDominos->at(0);
-					joueur.retirerDominoMain(d);
-				}
-				else
-				{
-					d=jOrdi.listeDominos->at(0);
-					jOrdi.retirerDominoMain(d);
-				}
+			if (main.getPseudo()==joueur.getPseudo())
+					{
+						d=joueur.listeDominos->at(0);
+						//joueur.retirerDominoMain(d);
+					}
+					else
+					{
+						d=jOrdi.listeDominos->at(0);
+						//jOrdi.retirerDominoMain(d);
+					}
 
-	}
-	/*Plateau p(d);
-	plateau=p;*/
+		}
+
+		Plateau p;
+		plateau=p;
+		plateau.setValInf(d.getValInf());
+		plateau.setValSup(d.getValSup());
+		plateau.dominosPlateau->push_back(d);
 
 
 }
@@ -170,9 +215,7 @@ void JeuDomino::piocher(){ //permet au joueur qui à la main (à qui c'est le tour
 }
 */
 
-void JeuDomino::verifierFinJeu(){
-	//pas fait
-}
+
 
 void JeuDomino::jouerUnTour(){ //correspond au tour de jeu d'un joueur, il faut différencier le tour de jeu de l'utilisateur de celui de l'ordinateur
 
@@ -184,7 +227,7 @@ if (main.getPseudo()==joueur.getPseudo())
 	//Si déposer un domino alors:
 		joueur.deposerDomino();
 	//Si piocher alors il pioche
-		joueur.piocher();
+		joueur.piocher(pioche);
 	//Changer de main
 	main=jOrdi;
 	}
@@ -200,10 +243,10 @@ else
 }
 
 
-//A TESTER
+
 void JeuDomino::attribuerMain(){//On attribut la main au premier tour à un des 2 joueurs
 
-		if (!joueur.doubleExiste() && !jOrdi.doubleExiste()) //On donne la main au joueur ayant le plus grand double
+		if (joueur.doubleExiste() && jOrdi.doubleExiste()) //On donne la main au joueur ayant le plus grand double
 		{
 			main=joueurAyantPlusGrandDouble(joueur,joueur.plusGrandDouble(),jOrdi, jOrdi.plusGrandDouble());
 
@@ -227,50 +270,63 @@ void JeuDomino::attribuerMain(){//On attribut la main au premier tour à un des 2
 }
 
 
-//A TESTER
+
 //On souhaite déterminer le joueur qui détient le plus grand double
 JoueurDomino JeuDomino::joueurAyantPlusGrandDouble(JoueurDomino j1, Domino d1, JoueurDomino j2, Domino d2){
 
-	Domino d(0,0);
-	JoueurDomino j=j1;
-
-//On cherche le plus grand double dans la main du premier joueur
-	for ( int i = 0; i < j1.getNbDominosRestants(); ++i )
-	{
-		if ((j1.listeDominos->at(i).getValInf() == j1.listeDominos->at(i).getValSup()) && (j1.listeDominos->at(i).getValSup() > d.getValInf()))
-			{
-				d.setValInf(j1.listeDominos->at(i).getValInf());
-				d.setValSup(j1.listeDominos->at(i).getValSup());
-			}
-	}
-
-// Si le deuxième joueur a un double plus grand que le premier joueur alors on garde le joueur 2
-	int i=0;
-	while ( ( i < j2.getNbDominosRestants()) && (j.getPseudo()!=j2.getPseudo())  )
-		{
-			++i;
-			if ((j2.listeDominos->at(i).getValInf() == j2.listeDominos->at(i).getValSup()) && (j2.listeDominos->at(i).getValSup() > d.getValInf()))
-				{
-					d.setValInf(j2.listeDominos->at(i).getValInf());
-					d.setValSup(j2.listeDominos->at(i).getValSup());
-					j=j2;
-				}
-		}
-
+	JoueurDomino j;
+if (d1.getValInf()>d2.getValInf()) //Si j1 a un plus grand domino que j2 alors c'est lui qui ressort
+	j=j1;
+else //sinon c'est j2
+	j=j2;
 
 	return j;
 }
 
-void JeuDomino::affichageEcranJoueur(){
+void JeuDomino::verifierFinJeu(){
 	//pas fait
 }
 
-void JeuDomino::affichageEcranOrdi(){
-	//pas fait
+void JeuDomino::affichageEcranJoueur(){ //Affichage écran lorsque c'est au tour du joueur de jouer
+	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
+	//plateau.affichagePlateau();
+	//joueur.affichageJeu();
+}
+
+void JeuDomino::affichageEcranOrdi(){ //Affichage écran lorsque c'est au tour de l'ordi de jouer
+	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
+		//plateau.affichagePlateau();
 }
 
 void JeuDomino::tourOrdi(){ //Intelligence artificielle
-	//pas fait
+//Si il a un ou plusieurs dominos qui peuvent être posé sur le plateau, alors il en pose un
+	//On le choisi de façon à ce que le domino ayant le plus grand nombre de points soit posé
+	//de manière à avoir plus de chance de gagner si le jeu et bloqué avant la fin
+	bool dominoChoisi="False";
+	Domino d(-1,-1);
+	for (int i=0;i<jOrdi.getNbDominosRestants();++i)
+	{
+		if (jOrdi.listeDominos->at(i).getValInf()+jOrdi.listeDominos->at(i).getValSup()>d.getValInf()+d.getValSup())
+			if (jOrdi.listeDominos->at(i).getValInf()==plateau.getValInf())
+			{
+				d=jOrdi.listeDominos->at(i);
+				int val=jOrdi.listeDominos->at(i).getValInf();
+				dominoChoisi="True";
+			}
+			else
+			{
+					d=jOrdi.listeDominos->at(i);
+					int val=jOrdi.listeDominos->at(i).getValSup();
+					dominoChoisi="True";
+			}
+
+	}
+	 //S'il ne peut pas jouer, alors il pioche
+	if (dominoChoisi)
+		jOrdi.retirerDominoMain(d);
+		//plateau.ajouterDominoPlateau(d, val);
+	else
+		jOrdi.piocher(pioche);
 }
 
 

@@ -22,14 +22,15 @@ using namespace std;
 #include "Domino.hpp"
 
 class JeuDomino{
-	private:
+	public:
 		JoueurDomino joueur;
 		JoueurDomino jOrdi;
 		JoueurDomino main;
 		Pioche pioche;
-		//Plateau plateau;
+
 
 	public:
+		Plateau plateau;
 		JeuDomino();
 		void lancerJeu();
 		void poserPion();
