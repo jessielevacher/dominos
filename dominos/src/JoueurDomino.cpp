@@ -16,7 +16,7 @@ JoueurDomino::JoueurDomino(){
 	main=false;
 	nbDominosRestants=0;
 	gagne=false;
-	listeDominos=new vector<Domino>();;
+	listeDominos=new vector<Domino>();
 }
 
 
@@ -54,35 +54,61 @@ void JoueurDomino::setGagne(bool g) {
 
 void JoueurDomino::saisirPseudo() {
 	string id;
-	cout << "Vous avez dÃ©cidÃ© de jouer, entrez votre pseudo :" << endl;
+	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
 	cin >> id;
 	setPseudo(id);
 }
 
 void JoueurDomino::distribuerDominos(Pioche p){
+	Domino d(0,0);
+	for(int i;i<7;++i)
+	{
+		d=p.retirerDominoPioche();
+		ajouterDominoMain(d);
+	}
 
 }
 
-void JoueurDomino::deposerDomino() {
+void JoueurDomino::deposerDomino() {//pas fait
 
 }
-void JoueurDomino::retirerDominoMain(Domino d){
+void JoueurDomino::retirerDominoMain(Domino d){//pas fait
 
+	nbDominosRestants--;
 }
-void JoueurDomino::piocher(){
+void JoueurDomino::piocher(Pioche p){
 
+	Domino d=p.retirerDominoPioche();
+	ajouterDominoMain(d);
 }
+
 void JoueurDomino::ajouterDominoMain(Domino d){
-
+	listeDominos->push_back(d);
+	nbDominosRestants++;
 }
 
 bool JoueurDomino::doubleExiste(){
-	bool a="True";
+	bool a="False";
+	int i=0;
+	while (!a && i<nbDominosRestants)
+	{
+		i++;
+		if (listeDominos->at(i).getValInf()==listeDominos->at(i).getValSup())
+		a="True";
+	}
 			return a;
 }
 
 Domino JoueurDomino::plusGrandDouble(){
-	Domino d(0,0);
+	Domino d(-1,-1);
+
+	for (int i; i<nbDominosRestants; ++i)
+	{
+		if (listeDominos->at(i).getValInf()==listeDominos->at(i).getValSup() && listeDominos->at(i).getValInf()>d.getValInf())
+		{
+			d.setValInf(listeDominos->at(i).getValInf());
+			d.setValSup(listeDominos->at(i).getValSup());
+		}
+	}
 	return d;
 }
-

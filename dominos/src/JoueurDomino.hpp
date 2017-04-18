@@ -38,7 +38,7 @@ public :
 	void distribuerDominos(Pioche);
 	void deposerDomino();
 	void retirerDominoMain(Domino);
-	void piocher();
+	void piocher(Pioche);
 	void ajouterDominoMain(Domino);
 
 	bool doubleExiste();
