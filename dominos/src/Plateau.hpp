@@ -19,7 +19,7 @@ private :
 	int valSup;
 public :
 	vector<Domino>* dominosPlateau;
-	Plateau(Domino d);
+	Plateau();
 	int getValInf() const;
 	void setValInf(int);
 	int getValSup();
