@@ -16,12 +16,13 @@ using namespace std;
 class Pioche{
 private:
 	static int nbDominos;
+	vector<Domino>* dominosPioche;
 
 public:
-	vector<Domino>* dominosPioche;
 	Pioche();
 	int getNbDominos();
 	void setNbDominos(int);
+	vector<Domino>* getDominosPioche();
 	Domino retirerDominoPioche();
 };
 

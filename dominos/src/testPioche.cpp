@@ -2,28 +2,36 @@
  * testPioche.cpp
  *
  *  Created on: 18 avr. 2017
- *      Author: L�a
+ *      Author: L�a
  */
 
-
 #include "Pioche.hpp"
+#include "Domino.hpp"
+
+#include <cstdio>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 void testPioche() //test le constructeur de JeuDomino
 {
 	Pioche p;
 
-	cout << " 1er domino : " << p.dominosPioche->at(0).getValInf() << endl;
-	cout << " 1er domino : " << p.dominosPioche->at(0).getValSup() << endl;
-	cout << " 2eme domino : " << p.dominosPioche->at(1).getValInf() << endl;
-	cout << " 2emecdomino : " << p.dominosPioche->at(1).getValSup() << endl;
-	cout << " 3eme domino : " << p.dominosPioche->at(2).getValInf()  << endl;
-	cout << " 3eme domino : " << p.dominosPioche->at(2).getValSup()  << endl;
-	cout << " 6eme domino : " << p.dominosPioche->at(5).getValSup()  << endl;
-	cout << " 6eme domino : " << p.dominosPioche->at(5).getValInf()  << endl;
-	cout << " 7eme domino : " << p.dominosPioche->at(6).getValSup()  << endl;
-	cout << " 7eme domino : " << p.dominosPioche->at(6).getValInf()  << endl;
-	cout << " 28eme domino : " << p.dominosPioche->at(27).getValSup()  << endl;
-	cout << " 28eme domino : " << p.dominosPioche->at(27).getValInf()  << endl;
+	//affiche tous les éléments de la pioche
+	for (int i=0; i < p.getDominosPioche()->size(); i=i+1) {
+		cout << "[" << p.getDominosPioche()->at(i).getValInf() << ";" << p.getDominosPioche()->at(i).getValSup() << "]" << endl;
+	}
+
+	//d représente le domino supprimé de la pioche
+	Domino d = p.retirerDominoPioche();
+	cout << "[" << d.getValInf() << ";" << d.getValSup() << "]" << endl;
+
+	//affiche tous les éléments de la pioche après avoir enlevé un élément
+	for (int i=0; i < p.getDominosPioche()->size(); i=i+1) {
+		cout << "[" << p.getDominosPioche()->at(i).getValInf() << ";" << p.getDominosPioche()->at(i).getValSup() << "]" << endl;
+	}
+
 }
 
 /*int main()

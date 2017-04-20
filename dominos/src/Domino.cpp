@@ -7,6 +7,7 @@
 
 
 #include "Domino.hpp"
+#include <string>
 
 Domino::Domino(const int vI,const int vS){ //constructeur
 
@@ -30,5 +31,9 @@ int Domino::getValSup() const{
 void Domino::setValSup(const int vS) {
 	valSup=vS;
 }
+
+/*string Domino::toString() const{
+	return "[" + to_string(valInf) + ";" + to_string(valSup) + "]";
+}*/
 
 
