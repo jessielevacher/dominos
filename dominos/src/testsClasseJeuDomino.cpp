@@ -74,7 +74,7 @@ Domino d(1,0);
 	cout << " domino 5: " << jeu.joueur.listeDominos->at(4).getValInf() << jeu.joueur.listeDominos->at(4).getValSup() << endl;
 	cout << " domino 6: " << jeu.joueur.listeDominos->at(5).getValInf() << jeu.joueur.listeDominos->at(5).getValSup() << endl;
 	cout << " domino 7: " << jeu.joueur.listeDominos->at(6).getValInf() << jeu.joueur.listeDominos->at(6).getValSup() << endl;
-*/
+
 	cout << " ordi " << endl;
 	cout << " domino 1: " << jeu.jOrdi.listeDominos->at(0).getValInf() << jeu.jOrdi.listeDominos->at(0).getValSup() << endl;
 			cout << " domino 2: " << jeu.jOrdi.listeDominos->at(1).getValInf() << jeu.jOrdi.listeDominos->at(1).getValSup() << endl;
@@ -83,7 +83,7 @@ Domino d(1,0);
 			cout << " domino 5: " << jeu.jOrdi.listeDominos->at(4).getValInf() << jeu.jOrdi.listeDominos->at(4).getValSup() << endl;
 			cout << " domino 6: " << jeu.jOrdi.listeDominos->at(5).getValInf() << jeu.jOrdi.listeDominos->at(5).getValSup() << endl;
 			cout << " domino 7: " << jeu.jOrdi.listeDominos->at(6).getValInf() << jeu.jOrdi.listeDominos->at(6).getValSup() << endl;
-
+*/
 
 
 //Pour vérifier l'initialisation du plateau
