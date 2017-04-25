@@ -14,7 +14,7 @@
 
 using namespace std;
 
-void testPioche() //test le constructeur de JeuDomino
+void testPioche()
 {
 	Pioche p;
 

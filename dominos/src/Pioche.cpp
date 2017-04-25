@@ -40,7 +40,7 @@ Domino Pioche::retirerDominoPioche(){
 	//Permet d'avoir un nombre aléatoire différent à chaque fois
 	//sinon indice = 15 à chaque fois
 	srand (time(NULL));
-	//Renvoie un entier compris entre 0 et nbDominos
+	//Renvoie un entier compris entre 0 et nbDominos-1
 	int indice = rand() % nbDominos;
 
 	Domino dominoRetire = dominosPioche->at(indice);

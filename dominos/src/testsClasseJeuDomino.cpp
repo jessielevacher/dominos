@@ -2,7 +2,7 @@
  * testsClasseJeuDomino.cpp
  *
  *  Created on: 16 avr. 2017
- *      Author: Léa
+ *      Author: Lï¿½a
  */
 
 
@@ -10,19 +10,19 @@
 #include <iostream>
 using namespace std;
 
-//Testons les méthodes de la classe JeuDomino
+//Testons les mï¿½thodes de la classe JeuDomino
 
 //!!!!!A VOIR
 void testLancerJeu() //test le constructeur de JeuDomino
 {
 	JeuDomino jeu;
 
-	//Pour vérifier l'attribution de la main
+	//Pour vï¿½rifier l'attribution de la main
 	cout << " la main est au joueur : " << jeu.main.getPseudo() << endl;
 
 /*
- //partie de code à ajouter dans le code du constructeur à la place de distribuerDominos()
-//On crée 2 joueurs détenant chacun un double, jOrdi à le plus grand donc doit avoir la main
+ //partie de code ï¿½ ajouter dans le code du constructeur ï¿½ la place de distribuerDominos()
+//On crï¿½e 2 joueurs dï¿½tenant chacun un double, jOrdi ï¿½ le plus grand donc doit avoir la main
 //on peut inverser d et d1 pour donner la main au joueur
 	Domino d(0,0);
 		Domino d1(2,2);
@@ -34,7 +34,7 @@ void testLancerJeu() //test le constructeur de JeuDomino
 			jOrdi.ajouterDominoMain(d1);
 
 
-//On crée 2 joueurs détenant aucun double -->main pour l'utilisateur
+//On crï¿½e 2 joueurs dï¿½tenant aucun double -->main pour l'utilisateur
 Domino d(1,0);
 		Domino d1(2,3);
 			joueur.ajouterDominoMain(d);
@@ -44,7 +44,7 @@ Domino d(1,0);
 			d1.setValInf(4);
 			jOrdi.ajouterDominoMain(d1);
 
- //On crée 2 joueurs et seul l'ordi a des doubles
+ //On crï¿½e 2 joueurs et seul l'ordi a des doubles
   Domino d1(0,0);
 				for(int i=0;i<7;++i){
 						d1.setValInf(i);
@@ -64,18 +64,40 @@ Domino d(1,0);
 					jOrdi.ajouterDominoMain(d1);
  */
 
-//Pour vérifier l'initialisation du plateau
+//VÃ©rifions la main du joueur aprÃ¨s distribution de la pioche
+/*
+	cout << " joueur " << endl;
+	cout << " domino 1: " << jeu.joueur.listeDominos->at(0).getValInf() << jeu.joueur.listeDominos->at(0).getValSup() << endl;
+	cout << " domino 2: " << jeu.joueur.listeDominos->at(1).getValInf() << jeu.joueur.listeDominos->at(1).getValSup() << endl;
+	cout << " domino 3: " << jeu.joueur.listeDominos->at(2).getValInf() << jeu.joueur.listeDominos->at(2).getValSup() << endl;
+	cout << " domino 4: " << jeu.joueur.listeDominos->at(3).getValInf() << jeu.joueur.listeDominos->at(3).getValSup() << endl;
+	cout << " domino 5: " << jeu.joueur.listeDominos->at(4).getValInf() << jeu.joueur.listeDominos->at(4).getValSup() << endl;
+	cout << " domino 6: " << jeu.joueur.listeDominos->at(5).getValInf() << jeu.joueur.listeDominos->at(5).getValSup() << endl;
+	cout << " domino 7: " << jeu.joueur.listeDominos->at(6).getValInf() << jeu.joueur.listeDominos->at(6).getValSup() << endl;
+*/
+	cout << " ordi " << endl;
+	cout << " domino 1: " << jeu.jOrdi.listeDominos->at(0).getValInf() << jeu.jOrdi.listeDominos->at(0).getValSup() << endl;
+			cout << " domino 2: " << jeu.jOrdi.listeDominos->at(1).getValInf() << jeu.jOrdi.listeDominos->at(1).getValSup() << endl;
+			cout << " domino 3: " << jeu.jOrdi.listeDominos->at(2).getValInf() << jeu.jOrdi.listeDominos->at(2).getValSup() << endl;
+			cout << " domino 4: " << jeu.jOrdi.listeDominos->at(3).getValInf() << jeu.jOrdi.listeDominos->at(3).getValSup() << endl;
+			cout << " domino 5: " << jeu.jOrdi.listeDominos->at(4).getValInf() << jeu.jOrdi.listeDominos->at(4).getValSup() << endl;
+			cout << " domino 6: " << jeu.jOrdi.listeDominos->at(5).getValInf() << jeu.jOrdi.listeDominos->at(5).getValSup() << endl;
+			cout << " domino 7: " << jeu.jOrdi.listeDominos->at(6).getValInf() << jeu.jOrdi.listeDominos->at(6).getValSup() << endl;
+
+
+
+//Pour vÃ©rifier l'initialisation du plateau
 	cout << " bornes du plateau: " << jeu.plateau.getValInf() << jeu.plateau.getValSup() << endl;
-	cout << " domino déposer sur le plateau en premier: " <<  	jeu.plateau.dominosPlateau->at(0).getValInf() << jeu.plateau.dominosPlateau->at(0).getValSup() <<endl;
+	cout << " domino dÃ©poser sur le plateau en premier: " <<  	jeu.plateau.dominosPlateau->at(0).getValInf() << jeu.plateau.dominosPlateau->at(0).getValSup() <<endl;
 
 
 }
 
 
-void testjoueurAyantPlusGrandDouble() //test la méthode qui doit retourner qui des 2 joueurs détient le plus grand double
+void testjoueurAyantPlusGrandDouble() //test la mï¿½thode qui doit retourner qui des 2 joueurs dï¿½tient le plus grand double
 {
 	JeuDomino jeu;
-	//On crée 2 joueurs détenant chacun un double, jOrdi à le plus grand donc doit avoir la main
+	//On crÃ©e 2 joueurs dï¿½tenant chacun un double, jOrdi ï¿½ le plus grand donc doit avoir la main
 	//on peut inverser d et d1 pour donner la main au joueur
 		Domino d(0,0);
 			Domino d1(2,2);

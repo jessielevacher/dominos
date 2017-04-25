@@ -11,65 +11,38 @@
 #include "JeuDomino.hpp"
 
 JeuDomino::JeuDomino(){ //constructeur
-/*	Domino d(0,0);
-	//Plateau p(d);
-	JoueurDomino j1;
-	Pioche pi;
 
-	 joueur=j1;
-	 jOrdi=j1;
-	 main=j1;
-	 pioche=pi;
-*/
-
-
-	//on cr�e une pioche
+	//on crée une pioche
 		Pioche pi;
 		pioche=pi;
 
-	//On cr�e un premier joueur
+	//On crée un premier joueur
 		JoueurDomino j1; //joueur anonyme tout d'abord
 
-		//On affecte � l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
+		//On affecte à l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
 		cout << " Veuillez entrer le pseudo sous lequel vous souhaitez jouer : " << endl;
 		string pseudo;
 		cin >> pseudo ;
 		j1.setPseudo(pseudo);
 		joueur=j1;
 
-	//Puis on cr�e un joueur artificiel, qui sera jou� par l'ordinateur
+	//Puis on crée un joueur artificiel, qui sera joué par l'ordinateur
 		JoueurDomino j2;
 		j2.setPseudo("ordi");
 		jOrdi=j2;
-/*
-	//On distribue les 7 dominos n�cessaire au d�but de la partie � chacun des deux joueurs
-		joueur.distribuerDominos(pi);
+
+	//On distribue les 7 dominos nécessaire au début de la partie à chacun des deux joueurs
+		//joueur.distribuerDominos(pi);
 		jOrdi.distribuerDominos(pi);
-*/
-		Domino d1(0,0);
-				for(int i=0;i<7;++i){
-						d1.setValInf(i);
-						d1.setValSup(i);
-					jOrdi.ajouterDominoMain(d1);
 
-					}
 
-					for(int i=0;i<6;++i){
-							d1.setValInf(i+1);
-							d1.setValSup(i);
-						joueur.ajouterDominoMain(d1);
 
-						}
-					d1.setValInf(2);
-					d1.setValSup(0);
-					jOrdi.ajouterDominoMain(d1);
-
-	//On attribut la main au premier tour � un des 2 joueurs
+	//On attribut la main au premier tour à un des 2 joueurs
 	attribuerMain();
 
 
-	//On cr�e un plateau contenant un unique domino,
-		//D�terminons le domino � d�poser en premier :
+	//On crée un plateau contenant un unique domino,
+		//Déterminons le domino à déposer en premier :
 
 		 // c'est � dire le domino ayant permis au joueur de gagner la main
 		Domino d(0,0);
@@ -93,6 +66,7 @@ JeuDomino::JeuDomino(){ //constructeur
 			if (main.getPseudo()==joueur.getPseudo())
 					{
 						d=joueur.listeDominos->at(0);
+
 						//joueur.retirerDominoMain(d);
 					}
 					else
@@ -113,7 +87,7 @@ JeuDomino::JeuDomino(){ //constructeur
 }
 
 
-//A TESTER
+
 void JeuDomino::lancerJeu(){
 
 	//on cr�e une pioche
@@ -224,9 +198,14 @@ if (main.getPseudo()==joueur.getPseudo())
 	//Afficher le plateau, le nombre de dominos restants dans la pioche et sa liste de domino
 	affichageEcranJoueur();
 	//Lui demander si il souhaite déposer un domino ou piocher
-
-	//Si d�poser un domino alors:
+	cout << " souhaitez-vous déposer un pion : 1 " <<  endl;
+	cout << " ou piocher : 2 " <<  endl;
+	int val;
+	cin >> val;
+	if (val==1)
+	//Si deposer un domino alors:
 		joueur.deposerDomino();
+	else
 	//Si piocher alors il pioche
 		joueur.piocher(pioche);
 	//Changer de main
