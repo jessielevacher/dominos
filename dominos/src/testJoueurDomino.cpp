@@ -2,7 +2,7 @@
  * testJoueurDomino.cpp
  *
  *  Created on: 18 avr. 2017
- *      Author: Léa
+ *      Author: Lï¿½a
  */
 
 #include "JoueurDomino.hpp"
@@ -37,7 +37,7 @@ void testdoubleExist()
 {
 	JoueurDomino j;
 int a;
-//Doit être faux
+//Doit ï¿½tre faux
 	Domino d1(5,4);
 	j.ajouterDominoMain(d1);
 
@@ -51,7 +51,7 @@ int a;
 
 		cout << " il y a un double : " << a << endl;
 
-//Doit être vrai
+//Doit ï¿½tre vrai
 	d1.setValInf(4);
 	j.ajouterDominoMain(d1);
 
@@ -67,7 +67,7 @@ int a;
 void testplusGrandDouble()
 {
 	JoueurDomino j;
-//On lui crée un jeu avec un unique double (0,0)
+//On lui crï¿½e un jeu avec un unique double (0,0)
 	Domino d(-2,-2);
 	Domino d1(5,0);
 		j.ajouterDominoMain(d1);
@@ -75,12 +75,12 @@ void testplusGrandDouble()
 			d1.setValInf(0);
 			j.ajouterDominoMain(d1);
 
-//Doit être (0,0)
+//Doit ï¿½tre (0,0)
 
 			d=j.plusGrandDouble();
 			cout << " plus grand double: " << d.getValInf() << d.getValSup() << endl;
 
-//Doit être (5,5)
+//Doit ï¿½tre (5,5)
 			//On ajoute 2 dominos dont 1 double (5,5)
 	d1.setValSup(5);
 	j.ajouterDominoMain(d1);
@@ -91,7 +91,7 @@ void testplusGrandDouble()
 		d=j.plusGrandDouble();
 		cout << " plus grand double: " << d.getValInf() << d.getValSup() << endl;
 
-	//Doit être (5,5)
+	//Doit ï¿½tre (5,5)
 //on ajoute un double (3,3)
 		d1.setValSup(3);
 		d1.setValInf(3);
@@ -102,7 +102,7 @@ void testplusGrandDouble()
 
 }
 
-int main()
+/*int main()
 {
 
 	//testSetPseudo();
@@ -110,7 +110,7 @@ int main()
 	//testdoubleExist();
 	testplusGrandDouble();
 	return 0;
-}
+}*/
 
 
 

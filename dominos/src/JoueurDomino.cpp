@@ -54,7 +54,7 @@ void JoueurDomino::setGagne(bool g) {
 
 void JoueurDomino::saisirPseudo() {
 	string id;
-	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
+	cout << "Vous avez decide de jouer, entrez votre pseudo :" << endl;
 	cin >> id;
 	setPseudo(id);
 }

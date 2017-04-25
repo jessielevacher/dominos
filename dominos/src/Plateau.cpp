@@ -39,15 +39,15 @@ void Plateau::setValSup(int vS){
 	valSup=vS;
 }
 
-void Plateau::ajouterDominoPlateau(Domino d, int val){
+void Plateau::ajouterDominoPlateau(Domino d, int val){//pas fait
 
 }
 
-void Plateau::modifierBorne(int val){
+void Plateau::modifierBorne(int val){//pas fait
 
 }
 
-bool Plateau::verifierCompatiblite(int val){
+bool Plateau::verifierCompatiblite(int val){//pas fait
 	bool a="True";
 	return a;
 }
