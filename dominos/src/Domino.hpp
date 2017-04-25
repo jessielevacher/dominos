@@ -26,7 +26,7 @@ class Domino{
 		void setValInf(const int);
 		int getValSup() const;
 		void setValSup(const int);
-		string toString() const;
+		friend ostream& operator<<(ostream&, const Domino&);
 };
 
 

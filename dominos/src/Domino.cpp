@@ -32,8 +32,9 @@ void Domino::setValSup(const int vS) {
 	valSup=vS;
 }
 
-/*string Domino::toString() const{
-	return "[" + to_string(valInf) + ";" + to_string(valSup) + "]";
-}*/
+ostream& operator<<(ostream& os, const Domino& d) {
+	os << "[" << d.valInf << ";" << d.valSup << "]";
+	return os;
+}
 
 

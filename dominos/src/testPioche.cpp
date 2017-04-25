@@ -20,16 +20,15 @@ void testPioche()
 
 	//affiche tous les éléments de la pioche
 	for (int i=0; i < p.getDominosPioche()->size(); i=i+1) {
-		cout << "[" << p.getDominosPioche()->at(i).getValInf() << ";" << p.getDominosPioche()->at(i).getValSup() << "]" << endl;
+		cout << p.getDominosPioche()->at(i) << endl;
 	}
 
-	//d représente le domino supprimé de la pioche
-	Domino d = p.retirerDominoPioche();
-	cout << "[" << d.getValInf() << ";" << d.getValSup() << "]" << endl;
+	//affiche le domino supprimé de la pioche
+	cout << p.retirerDominoPioche() << endl;
 
 	//affiche tous les éléments de la pioche après avoir enlevé un élément
 	for (int i=0; i < p.getDominosPioche()->size(); i=i+1) {
-		cout << "[" << p.getDominosPioche()->at(i).getValInf() << ";" << p.getDominosPioche()->at(i).getValSup() << "]" << endl;
+		cout << p.getDominosPioche()->at(i) << endl;
 	}
 
 }
