@@ -27,8 +27,7 @@ void testajouterDominoMain()
 	Domino d1(5,4);
 	j.ajouterDominoMain(d1);
 
-	cout << " 1er domino : " << j.listeDominos->at(0).getValInf() << endl;
-	cout << " 1er domino : " << j.listeDominos->at(0).getValSup() << endl;
+	cout << " 1er domino : " << j.getListeDominos()->at(0)<< endl;
 	cout << " nb dominos du joueur : " << j.getNbDominosRestants() << endl;
 
 }
@@ -102,13 +101,32 @@ void testplusGrandDouble()
 
 }
 
+void testdistribuerdomino()
+{
+	Pioche p;
+	JoueurDomino j;
+	cout << " nb dominos du joueur : " << j.getNbDominosRestants() << endl;
+
+
+	j.distribuerDominos(p);
+
+	cout << " dominos du joueur " << endl;
+		for (int i=0;i<7;i++)
+		cout << j.getListeDominos()->at(i) <<endl;
+
+	cout << " nb dominos du joueur : " << j.getNbDominosRestants() << endl;
+
+}
+
+
 /*int main()
 {
 
 	//testSetPseudo();
 	//testajouterDominoMain();
 	//testdoubleExist();
-	testplusGrandDouble();
+	//testplusGrandDouble();
+	testdistribuerdomino();
 	return 0;
 }*/
 

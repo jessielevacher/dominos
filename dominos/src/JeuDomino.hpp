@@ -22,6 +22,9 @@ using namespace std;
 #include "Domino.hpp"
 
 class JeuDomino{
+private :
+
+
 	public:
 		JoueurDomino joueur;
 		JoueurDomino jOrdi;
@@ -32,7 +35,7 @@ class JeuDomino{
 	public:
 		Plateau plateau;
 		JeuDomino();
-		void lancerJeu();
+
 		void poserPion();
 		void piocher();
 		void verifierFinJeu();

@@ -22,9 +22,9 @@ private :
 	bool main;
 	int nbDominosRestants;
 	bool gagne;
+	vector<Domino>* listeDominos;
 
 public :
-	vector<Domino>* listeDominos;
 	JoueurDomino();
 	string getPseudo();
 	void setPseudo(string);
@@ -34,6 +34,8 @@ public :
 	void setNbDominosRestants(int);
 	bool getGagne();
 	void setGagne(bool);
+	vector<Domino>* getListeDominos();
+	void setBackListeDominos(const Domino);
 	void saisirPseudo();
 	void distribuerDominos(Pioche);
 	void deposerDomino();

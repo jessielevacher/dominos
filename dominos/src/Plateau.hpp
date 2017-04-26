@@ -17,13 +17,16 @@ class Plateau{
 private :
 	int valInf;
 	int valSup;
-public :
 	vector<Domino>* dominosPlateau;
+public :
 	Plateau();
 	int getValInf() const;
 	void setValInf(int);
 	int getValSup();
 	void setValSup(int);
+	vector<Domino>* getDominosPlateau();
+	void setBackDominosPlateau(const Domino);
+	void setBeginDominosPlateau(const Domino);
 	void ajouterDominoPlateau(Domino, int);
 	void modifierBorne(int);
 	bool verifierCompatiblite(int);

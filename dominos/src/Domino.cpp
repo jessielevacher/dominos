@@ -21,7 +21,7 @@ int Domino::getValInf() const{
 }
 
 void Domino::setValInf(const int vI) {
-	valSup=vI;
+	valInf=vI;
 }
 
 int Domino::getValSup() const{

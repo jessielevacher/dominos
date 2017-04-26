@@ -52,6 +52,15 @@ void JoueurDomino::setGagne(bool g) {
 	gagne=g;
 }
 
+vector<Domino>* JoueurDomino::getListeDominos(){
+	return listeDominos;
+}
+
+void JoueurDomino::setBackListeDominos(const Domino d){
+	 listeDominos->push_back(d);
+
+}
+
 void JoueurDomino::saisirPseudo() {
 	string id;
 	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
@@ -61,7 +70,7 @@ void JoueurDomino::saisirPseudo() {
 
 void JoueurDomino::distribuerDominos(Pioche p){
 	Domino d(0,0);
-	for(int i;i<7;++i)
+	for(int i=0;i<7;++i)
 	{
 		d=p.retirerDominoPioche();
 		ajouterDominoMain(d);

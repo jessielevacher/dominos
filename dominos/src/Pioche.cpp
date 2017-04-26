@@ -15,13 +15,17 @@ int Pioche::nbDominos = 28;
 Pioche::Pioche(){
 	dominosPioche = new vector<Domino>();
 
-	// On crÃ©e la pioche en crÃ©ant tous les dominos
+	// On crée la pioche en créant tous les dominos
 	for (int i=0; i < 7; i++){
-		for (int j=0; j < 7; j++){
+		for (int j=i+1; j < 7; j++){
 			Domino d(i,j);
 			dominosPioche->push_back(d);
 		}
 	}
+	for (int j=0; j < 7; j++){
+				Domino d(j,j);
+				dominosPioche->push_back(d);
+			}
 }
 
 int Pioche::getNbDominos(){

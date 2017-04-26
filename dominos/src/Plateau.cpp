@@ -39,6 +39,22 @@ void Plateau::setValSup(int vS){
 	valSup=vS;
 }
 
+vector<Domino>* Plateau::getDominosPlateau(){
+	return dominosPlateau;
+}
+
+void Plateau::setBackDominosPlateau(const Domino d){
+	 dominosPlateau->push_back(d);
+
+}
+
+void Plateau::setBeginDominosPlateau(const Domino d){
+	vector<Domino>::iterator iterator = dominosPlateau->begin();
+
+	 dominosPlateau->insert(iterator+(0),d);
+
+}
+
 void Plateau::ajouterDominoPlateau(Domino d, int val){//pas fait
 
 }

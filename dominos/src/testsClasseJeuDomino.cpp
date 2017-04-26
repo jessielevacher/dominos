@@ -17,8 +17,6 @@ void testLancerJeu() //test le constructeur de JeuDomino
 {
 	JeuDomino jeu;
 
-	//Pour v�rifier l'attribution de la main
-	cout << " la main est au joueur : " << jeu.main.getPseudo() << endl;
 
 /*
  //partie de code � ajouter dans le code du constructeur � la place de distribuerDominos()
@@ -65,30 +63,23 @@ Domino d(1,0);
  */
 
 //Vérifions la main du joueur après distribution de la pioche
-/*
-	cout << " joueur " << endl;
-	cout << " domino 1: " << jeu.joueur.listeDominos->at(0).getValInf() << jeu.joueur.listeDominos->at(0).getValSup() << endl;
-	cout << " domino 2: " << jeu.joueur.listeDominos->at(1).getValInf() << jeu.joueur.listeDominos->at(1).getValSup() << endl;
-	cout << " domino 3: " << jeu.joueur.listeDominos->at(2).getValInf() << jeu.joueur.listeDominos->at(2).getValSup() << endl;
-	cout << " domino 4: " << jeu.joueur.listeDominos->at(3).getValInf() << jeu.joueur.listeDominos->at(3).getValSup() << endl;
-	cout << " domino 5: " << jeu.joueur.listeDominos->at(4).getValInf() << jeu.joueur.listeDominos->at(4).getValSup() << endl;
-	cout << " domino 6: " << jeu.joueur.listeDominos->at(5).getValInf() << jeu.joueur.listeDominos->at(5).getValSup() << endl;
-	cout << " domino 7: " << jeu.joueur.listeDominos->at(6).getValInf() << jeu.joueur.listeDominos->at(6).getValSup() << endl;
+	cout << " dominos du joueur " << endl;
+	for (int i=0;i<7;i++)
+	cout << jeu.joueur.getListeDominos()->at(i) <<endl;
 
-	cout << " ordi " << endl;
-	cout << " domino 1: " << jeu.jOrdi.listeDominos->at(0).getValInf() << jeu.jOrdi.listeDominos->at(0).getValSup() << endl;
-			cout << " domino 2: " << jeu.jOrdi.listeDominos->at(1).getValInf() << jeu.jOrdi.listeDominos->at(1).getValSup() << endl;
-			cout << " domino 3: " << jeu.jOrdi.listeDominos->at(2).getValInf() << jeu.jOrdi.listeDominos->at(2).getValSup() << endl;
-			cout << " domino 4: " << jeu.jOrdi.listeDominos->at(3).getValInf() << jeu.jOrdi.listeDominos->at(3).getValSup() << endl;
-			cout << " domino 5: " << jeu.jOrdi.listeDominos->at(4).getValInf() << jeu.jOrdi.listeDominos->at(4).getValSup() << endl;
-			cout << " domino 6: " << jeu.jOrdi.listeDominos->at(5).getValInf() << jeu.jOrdi.listeDominos->at(5).getValSup() << endl;
-			cout << " domino 7: " << jeu.jOrdi.listeDominos->at(6).getValInf() << jeu.jOrdi.listeDominos->at(6).getValSup() << endl;
-*/
+	//Vérifions la main de l'ordi après distribution de la pioche
+	cout << " dominos de l'ordi " << endl;
+		for (int i=0;i<7;i++)
+		cout << jeu.jOrdi.getListeDominos()->at(i) <<endl;
 
+
+		//Pour v�rifier l'attribution de la main
+		cout << " la main est au joueur : " << jeu.main.getPseudo() << endl;
 
 //Pour vérifier l'initialisation du plateau
 	cout << " bornes du plateau: " << jeu.plateau.getValInf() << jeu.plateau.getValSup() << endl;
-	cout << " domino déposer sur le plateau en premier: " <<  	jeu.plateau.dominosPlateau->at(0).getValInf() << jeu.plateau.dominosPlateau->at(0).getValSup() <<endl;
+	cout << " domino déposer sur le plateau en premier: " <<  	jeu.plateau.getDominosPlateau()->at(0)  <<endl;
+
 
 
 }
