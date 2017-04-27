@@ -110,11 +110,11 @@ cout << " le joueur ayant le plus grand double est : " << j.getPseudo() << endl;
 
 
 
-int main()
+/*int main()
 {
 	testLancerJeu();
 	//testattribuerMain();
 	//testjoueurAyantPlusGrandDouble();
 	return 0;
-}
+}*/
 

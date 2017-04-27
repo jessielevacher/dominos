@@ -81,8 +81,17 @@ void JoueurDomino::distribuerDominos(Pioche p){
 void JoueurDomino::deposerDomino() {//pas fait
 
 }
-void JoueurDomino::retirerDominoMain(Domino d){//pas fait
-
+void JoueurDomino::retirerDominoMain(Domino d){
+	bool arret=false;
+	int i=0;
+	while (arret!=true && i<nbDominosRestants){
+		if (listeDominos->at(i).getValInf()==d.getValInf() && listeDominos->at(i).getValSup()==d.getValSup()) {
+			listeDominos->erase(listeDominos->begin()+i);
+			cout << "valeur du i : " << i << endl;
+			arret=true;
+		}
+		i++;
+	}
 	nbDominosRestants--;
 }
 void JoueurDomino::piocher(Pioche p){
