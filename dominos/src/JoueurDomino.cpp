@@ -177,6 +177,7 @@ void JoueurDomino::afficherMain()
 {
 	for (int i=0;i<nbDominosRestants; ++i)
 		{ cout << listeDominos->at(i);
+
 		}
 }
 
