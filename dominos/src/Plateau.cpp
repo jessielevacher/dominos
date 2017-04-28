@@ -63,14 +63,12 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 			setValInf(d.getValSup());
 		else setValInf(d.getValInf());
 		//on ajoute le domino au début du plateau
-		cout << "begin" << endl;
 		setBeginDominosPlateau(d);
 	} else {
 		if (jonction == d.getValInf())
 			setValSup(d.getValSup());
 		else setValSup(d.getValInf());
 		//on ajouter le domino à la fin du plateau
-		cout << "back" << endl;
 		setBackDominosPlateau(d);
 	}
 }
