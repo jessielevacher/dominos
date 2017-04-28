@@ -82,6 +82,10 @@ JeuDomino::JeuDomino(){ //constructeur
 		plateau.setValSup(d.getValSup());
 		plateau.setBackDominosPlateau(d);
 
+		if (main.getPseudo()==joueur.getPseudo())
+				main.setPseudo(jOrdi.getPseudo());
+		else
+			main.setPseudo(joueur.getPseudo());
 
 }
 

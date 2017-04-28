@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+/*int main() {
 	JeuDomino jeu;
 
 	cout << " bornes du plateau: " << jeu.plateau.getValInf() << "-" << jeu.plateau.getValSup() << endl;
@@ -30,6 +30,6 @@ int main() {
 
 
 
-}
+}*/
 
 
