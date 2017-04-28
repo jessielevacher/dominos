@@ -62,7 +62,7 @@ Domino d(1,0);
 					jOrdi.ajouterDominoMain(d1);
  */
 
-//Vérifions la main du joueur après distribution de la pioche
+//Vérifions la main du joueur après distribution de la pioche et depot du premier domino sur le plateau
 	cout << " dominos du joueur " << endl;
 	for (int i=0;i<7;i++)
 	cout << jeu.joueur.getListeDominos()->at(i) <<endl;
@@ -73,12 +73,13 @@ Domino d(1,0);
 		cout << jeu.jOrdi.getListeDominos()->at(i) <<endl;
 
 
-		//Pour v�rifier l'attribution de la main
-		cout << " la main est au joueur : " << jeu.main.getPseudo() << endl;
+
 
 //Pour vérifier l'initialisation du plateau
 	cout << " bornes du plateau: " << jeu.plateau.getValInf() << "-" << jeu.plateau.getValSup() << endl;
 	cout << " domino déposer sur le plateau en premier: " <<  	jeu.plateau.getDominosPlateau()->at(0)  <<endl;
+
+
 
 	cout << " la main est au joueur : " << jeu.main.getPseudo() << endl;
 

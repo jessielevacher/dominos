@@ -138,7 +138,6 @@ void JoueurDomino::piocher(Pioche p){
 
 	Domino d=p.retirerDominoPioche();
 	ajouterDominoMain(d);
-	nbDominosRestants++;
 }
 
 void JoueurDomino::ajouterDominoMain(Domino d){

@@ -63,7 +63,7 @@ using namespace std;
 	plat.ajouterDominoPlateau(d2, 2);
 
 	for (int i=0;i<plat.getDominosPlateau()->size();i++)
-					cout << plat.getDominosPlateau()->at(i) << endl;*/
+					cout << plat.getDominosPlateau()->at(i) << endl;
 
 }*/
 

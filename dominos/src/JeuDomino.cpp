@@ -36,6 +36,14 @@ JeuDomino::JeuDomino(){ //constructeur
 		joueur.distribuerDominos(pi);
 		jOrdi.distribuerDominos(pi);
 
+		cout << " dominos du joueur " << endl;
+			for (int i=0;i<7;i++)
+			cout << joueur.getListeDominos()->at(i) <<endl;
+
+			cout << " dominos du ordi " << endl;
+					for (int i=0;i<7;i++)
+					cout << jOrdi.getListeDominos()->at(i) <<endl;
+
 
 	//On attribut la main au premier tour � un des 2 joueurs
 	attribuerMain();
@@ -51,12 +59,12 @@ JeuDomino::JeuDomino(){ //constructeur
 			if (main.getPseudo()==joueur.getPseudo())
 			{
 				d=joueur.plusGrandDouble();
-				//joueur.retirerDominoMain(d);
+				joueur.retirerDominoMain(d);
 			}
 			else
 			{
 				d=jOrdi.plusGrandDouble();
-				//jOrdi.retirerDominoMain(d);
+				jOrdi.retirerDominoMain(d);
 			}
 		}
 		else
@@ -66,12 +74,12 @@ JeuDomino::JeuDomino(){ //constructeur
 			if (main.getPseudo()==joueur.getPseudo())
 					{
 						d=joueur.getListeDominos()->at(0);
-						//joueur.retirerDominoMain(d);
+						joueur.retirerDominoMain(d);
 					}
 					else
 					{
 						d=jOrdi.getListeDominos()->at(0);
-						//jOrdi.retirerDominoMain(d);
+						jOrdi.retirerDominoMain(d);
 					}
 
 		}
