@@ -56,7 +56,7 @@ void Plateau::setBeginDominosPlateau(const Domino d){
 }
 
 void Plateau::ajouterDominoPlateau(Domino d, int val){//pas fait
-
+	cout << "ajouterDominoPlateau" << endl;
 }
 
 void Plateau::modifierBorne(int val){//pas fait
@@ -65,7 +65,7 @@ void Plateau::modifierBorne(int val){//pas fait
 
 bool Plateau::verifierCompatiblite(int val){//pas fait
 	bool a="True";
-	return a;
+	return false;
 }
 
 

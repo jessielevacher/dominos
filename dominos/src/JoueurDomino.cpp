@@ -8,6 +8,7 @@
 #include "JoueurDomino.hpp"
 #include "Pioche.hpp"
 #include "Domino.hpp"
+#include "Plateau.hpp"
 
 using namespace std;
 
@@ -78,7 +79,7 @@ void JoueurDomino::distribuerDominos(Pioche p){
 
 }
 
-void JoueurDomino::deposerDomino() {
+void JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 	int vi, vs, jonc;
 	cout << "Quel domino souhaiter vous poser ?" << endl;
 	cout << "ValSup : ";
@@ -86,13 +87,40 @@ void JoueurDomino::deposerDomino() {
 	cout << "ValInf : ";
 	cin >> vi;
 	cout << "Coté pour la jonction :";
-	cin >>jonc;
+	cin >> jonc;
 
 	Domino dominoChanger(vi, vs);
 
-	retirerDominoMain(dominoChanger);
-
+	if (verifierDominoMain(dominoChanger)) {
+		if (jonc == vi) {
+			if (plat.verifierCompatiblite(dominoChanger.getValInf())) {
+				retirerDominoMain(dominoChanger);
+				plat.ajouterDominoPlateau(dominoChanger, dominoChanger.getValInf());
+			} else
+				piocher(p);
+		}
+		else { if (plat.verifierCompatiblite(dominoChanger.getValSup())) {
+					retirerDominoMain(dominoChanger);
+					plat.ajouterDominoPlateau(dominoChanger, dominoChanger.getValSup());
+				} else
+					piocher(p);
+		}
+	}
 }
+
+
+bool JoueurDomino::verifierDominoMain(Domino d){
+	bool arret=false;
+	int i=0;
+	while (arret!=true && i<nbDominosRestants) {
+		if (getListeDominos()->at(i).getValInf()==d.getValInf() && getListeDominos()->at(i).getValSup()==d.getValSup())
+			arret=true;
+		else i++;
+	}
+	return arret;
+}
+
+
 void JoueurDomino::retirerDominoMain(Domino d){
 	bool arret=false;
 	int i=0;
