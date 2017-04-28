@@ -12,6 +12,7 @@
 #include <vector>
 #include "Pioche.hpp"
 #include "Domino.hpp"
+#include "Plateau.hpp"
 
 using namespace std;
 
@@ -38,10 +39,11 @@ public :
 	void setBackListeDominos(const Domino);
 	void saisirPseudo();
 	void distribuerDominos(Pioche);
-	void deposerDomino();
+	void deposerDomino(Plateau, Pioche);
 	void retirerDominoMain(Domino);
 	void piocher(Pioche);
 	void ajouterDominoMain(Domino);
+	bool verifierDominoMain(Domino);
 
 	bool doubleExiste();
 	Domino plusGrandDouble();

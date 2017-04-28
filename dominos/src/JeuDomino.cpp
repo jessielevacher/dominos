@@ -13,38 +13,38 @@
 JeuDomino::JeuDomino(){ //constructeur
 
 
-	//on crée une pioche
+	//on crï¿½e une pioche
 		Pioche pi;
 		pioche=pi;
 
-	//On crée un premier joueur
+	//On crï¿½e un premier joueur
 		JoueurDomino j1; //joueur anonyme tout d'abord
 
-		//On affecte à l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
+		//On affecte ï¿½ l'attribut joueur un joueur ayant pour pseudo le pseudo choisi par l'utilisateur
 		cout << " Veuillez entrer le pseudo sous lequel vous souhaitez jouer : " << endl;
 		string pseudo;
 		cin >> pseudo ;
 		j1.setPseudo(pseudo);
 		joueur=j1;
 
-	//Puis on crée un joueur artificiel, qui sera joué par l'ordinateur
+	//Puis on crï¿½e un joueur artificiel, qui sera jouï¿½ par l'ordinateur
 		JoueurDomino j2;
 		j2.setPseudo("ordi");
 		jOrdi=j2;
 
-	//On distribue les 7 dominos nécessaire au début de la partie à chacun des deux joueurs
+	//On distribue les 7 dominos nï¿½cessaire au dï¿½but de la partie ï¿½ chacun des deux joueurs
 		joueur.distribuerDominos(pi);
 		jOrdi.distribuerDominos(pi);
 
 
-	//On attribut la main au premier tour à un des 2 joueurs
+	//On attribut la main au premier tour ï¿½ un des 2 joueurs
 	attribuerMain();
 
 
-	//On crée un plateau contenant un unique domino,
-		//Déterminons le domino à déposer en premier :
+	//On crï¿½e un plateau contenant un unique domino,
+		//Dï¿½terminons le domino ï¿½ dï¿½poser en premier :
 
-		 // c'est à dire le domino ayant permis au joueur de gagner la main
+		 // c'est ï¿½ dire le domino ayant permis au joueur de gagner la main
 		Domino d(0,0);
 		if (main.doubleExiste())
 		{
@@ -60,8 +60,8 @@ JeuDomino::JeuDomino(){ //constructeur
 			}
 		}
 		else
-		 //ou Un domino aléatoire de la main du joueur ayant la main au premier tour si le joueur a dû être choisi aléatoirement
-		 	 	 //On prend le premier domino, de sa main, ce qui reste aléatoire puisqu'ils ont été distribués aléatoirement
+		 //ou Un domino alï¿½atoire de la main du joueur ayant la main au premier tour si le joueur a dï¿½ ï¿½tre choisi alï¿½atoirement
+		 	 	 //On prend le premier domino, de sa main, ce qui reste alï¿½atoire puisqu'ils ont ï¿½tï¿½ distribuï¿½s alï¿½atoirement
 		{
 			if (main.getPseudo()==joueur.getPseudo())
 					{
@@ -87,27 +87,27 @@ JeuDomino::JeuDomino(){ //constructeur
 
 
 //UTILE ??
-/*void JeuDomino::poserPion(){//permet au joueur qui à la main (à qui c'est le tour de jouer) de déposer le domino qu'il souhaite sur le plateau
+/*void JeuDomino::poserPion(){//permet au joueur qui ï¿½ la main (ï¿½ qui c'est le tour de jouer) de dï¿½poser le domino qu'il souhaite sur le plateau
 	main.deposerDomino();
 
 }
 
-void JeuDomino::piocher(){ //permet au joueur qui à la main (à qui c'est le tour de jouer) de piocher un domino au hasard dans la pioche
+void JeuDomino::piocher(){ //permet au joueur qui ï¿½ la main (ï¿½ qui c'est le tour de jouer) de piocher un domino au hasard dans la pioche
 	main.piocher();
 }
 */
 
 
 //A TESTER QUAND ON AURA LES FONCTIONS
-void JeuDomino::jouerUnTour(){ //correspond au tour de jeu d'un joueur, il faut différencier le tour de jeu de l'utilisateur de celui de l'ordinateur
+void JeuDomino::jouerUnTour(){ //correspond au tour de jeu d'un joueur, il faut diffï¿½rencier le tour de jeu de l'utilisateur de celui de l'ordinateur
 
 if (main.getPseudo()==joueur.getPseudo())
 	{//Pour l'utilisateur
 	//Afficher le plateau, le nombre de dominos restants dans la pioche et sa liste de domino
 	affichageEcranJoueur();
-	//Lui demander si il souhaite déposer un domino ou piocher
-	//Si déposer un domino alors:
-		joueur.deposerDomino();
+	//Lui demander si il souhaite dï¿½poser un domino ou piocher
+	//Si dï¿½poser un domino alors:
+		joueur.deposerDomino(plateau, pioche);
 	//Si piocher alors il pioche
 		joueur.piocher(pioche);
 	//Changer de main
@@ -126,7 +126,7 @@ else
 
 
 
-void JeuDomino::attribuerMain(){//On attribut la main au premier tour à un des 2 joueurs
+void JeuDomino::attribuerMain(){//On attribut la main au premier tour ï¿½ un des 2 joueurs
 
 		if (joueur.doubleExiste() && jOrdi.doubleExiste()) //On donne la main au joueur ayant le plus grand double
 		{
@@ -143,7 +143,7 @@ void JeuDomino::attribuerMain(){//On attribut la main au premier tour à un des 2
 					main=jOrdi;
 					jOrdi.setMain("True");
 				}
-				else //Ou à l'utilisateur si aucun des deux n'a de double dans sa liste de dominos
+				else //Ou ï¿½ l'utilisateur si aucun des deux n'a de double dans sa liste de dominos
 				{
 					main=joueur;
 					joueur.setMain("True");
@@ -153,7 +153,7 @@ void JeuDomino::attribuerMain(){//On attribut la main au premier tour à un des 2
 
 
 
-//On souhaite déterminer le joueur qui détient le plus grand double
+//On souhaite dï¿½terminer le joueur qui dï¿½tient le plus grand double
 JoueurDomino JeuDomino::joueurAyantPlusGrandDouble(JoueurDomino j1, Domino d1, JoueurDomino j2, Domino d2){
 
 	JoueurDomino j;
@@ -169,23 +169,23 @@ void JeuDomino::verifierFinJeu(){//pas fait
 }
 
 //A TESTER QUAND ON AURA LES FONCTIONS D AFFICHAGE
-void JeuDomino::affichageEcranJoueur(){ //Affichage écran lorsque c'est au tour du joueur de jouer
+void JeuDomino::affichageEcranJoueur(){ //Affichage ï¿½cran lorsque c'est au tour du joueur de jouer
 	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
 	//plateau.affichagePlateau();
 	//joueur.affichageJeu();
 }
 
 //A TESTER QUAND ON AURA LES FONCTIONS D AFFICHAGE
-void JeuDomino::affichageEcranOrdi(){ //Affichage écran lorsque c'est au tour de l'ordi de jouer
+void JeuDomino::affichageEcranOrdi(){ //Affichage ï¿½cran lorsque c'est au tour de l'ordi de jouer
 	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
 		//plateau.affichagePlateau();
 }
 
 //A TESTER QUAND ON AURA LES FONCTIONS
 void JeuDomino::tourOrdi(){ //Intelligence artificielle
-//Si il a un ou plusieurs dominos qui peuvent être posé sur le plateau, alors il en pose un
-	//On le choisi de façon à ce que le domino ayant le plus grand nombre de points soit posé
-	//de manière à avoir plus de chance de gagner si le jeu et bloqué avant la fin
+//Si il a un ou plusieurs dominos qui peuvent ï¿½tre posï¿½ sur le plateau, alors il en pose un
+	//On le choisi de faï¿½on ï¿½ ce que le domino ayant le plus grand nombre de points soit posï¿½
+	//de maniï¿½re ï¿½ avoir plus de chance de gagner si le jeu et bloquï¿½ avant la fin
 	bool dominoChoisi="False";
 	Domino d(-1,-1);
 	for (int i=0;i<jOrdi.getNbDominosRestants();++i)
