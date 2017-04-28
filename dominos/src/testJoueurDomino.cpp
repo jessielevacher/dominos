@@ -118,17 +118,32 @@ void testdistribuerdomino()
 
 }
 
+void testafficherMain()
+{
+	Domino d(1,2);
+	JoueurDomino j;
 
-/*int main()
+	j.ajouterDominoMain(d);
+	d.setValInf(5);
+	j.ajouterDominoMain(d);
+	d.setValSup(3);
+	j.ajouterDominoMain(d);
+
+	j.afficherMain();
+}
+
+
+int main()
 {
 
 	//testSetPseudo();
 	//testajouterDominoMain();
 	//testdoubleExist();
 	//testplusGrandDouble();
-	testdistribuerdomino();
-	return 0;
-}*/
+	//testdistribuerdomino();
+	testafficherMain();
+		return 0;
+}
 
 
 

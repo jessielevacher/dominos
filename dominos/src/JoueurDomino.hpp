@@ -45,6 +45,8 @@ public :
 
 	bool doubleExiste();
 	Domino plusGrandDouble();
+
+	void afficherMain();
 };
 
 

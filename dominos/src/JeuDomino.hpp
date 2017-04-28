@@ -28,12 +28,11 @@ class JeuDomino{
 		JoueurDomino jOrdi;
 		JoueurDomino main;
 		Pioche pioche;
+		Plateau plateau;
 
 
 	public:
-		Plateau plateau;
 		JeuDomino();
-
 		void poserPion();
 		void piocher();
 		void verifierFinJeu();

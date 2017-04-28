@@ -145,3 +145,10 @@ Domino JoueurDomino::plusGrandDouble(){
 	return d;
 }
 
+void JoueurDomino::afficherMain()
+{
+	for (int i=0;i<nbDominosRestants; ++i)
+		{ cout << listeDominos->at(i);
+		}
+}
+
