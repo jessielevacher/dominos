@@ -133,7 +133,7 @@ void testafficherMain()
 }
 
 
-int main()
+/*int main()
 {
 
 	//testSetPseudo();
@@ -144,6 +144,6 @@ int main()
 	testafficherMain();
 		return 0;
 }
-
+*/
 
 

@@ -55,17 +55,29 @@ void Plateau::setBeginDominosPlateau(const Domino d){
 
 }
 
-void Plateau::ajouterDominoPlateau(Domino d, int val){//pas fait
-	cout << "ajouterDominoPlateau" << endl;
-}
-
-void Plateau::modifierBorne(int val){//pas fait
-
+void Plateau::ajouterDominoPlateau(Domino d, int jonction){//pas fait
+	//on regarde si la jonction est avec la valInf du plateau
+	if (jonction == getValInf()) {
+		//on regarde si la jonction se fait avec la valInf ou valSup du domino a poser
+		if (jonction == d.getValInf())
+			setValInf(d.getValSup());
+		else setValInf(d.getValInf());
+		//on ajoute le domino au début du plateau
+		cout << "begin" << endl;
+		setBeginDominosPlateau(d);
+	} else {
+		if (jonction == d.getValInf())
+			setValSup(d.getValSup());
+		else setValSup(d.getValInf());
+		//on ajouter le domino à la fin du plateau
+		cout << "back" << endl;
+		setBackDominosPlateau(d);
+	}
 }
 
 bool Plateau::verifierCompatiblite(int val){//pas fait
 	bool a="True";
-	return false;
+	return a;
 }
 
 
