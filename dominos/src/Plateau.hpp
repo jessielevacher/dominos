@@ -28,7 +28,6 @@ public :
 	void setBackDominosPlateau(const Domino);
 	void setBeginDominosPlateau(const Domino);
 	void ajouterDominoPlateau(Domino, int);
-	void modifierBorne(int);
 	bool verifierCompatiblite(int);
 };
 
