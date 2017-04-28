@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-	/*JeuDomino jeu;
+	JeuDomino jeu;
 
 	cout << " bornes du plateau: " << jeu.plateau.getValInf() << "-" << jeu.plateau.getValSup() << endl;
 	cout << " domino déposer sur le plateau en premier: " <<  	jeu.plateau.getDominosPlateau()->at(0)  <<endl;
@@ -27,10 +27,15 @@ int main() {
 	jeu.joueur.deposerDomino(jeu.plateau, jeu.pioche);
 
 	for (int i=0;i<jeu.joueur.getNbDominosRestants();i++)
-			cout << jeu.joueur.getListeDominos()->at(i) << endl;*/
+			cout << jeu.joueur.getListeDominos()->at(i) << endl;
+
+	cout << "-----------" << endl;
+
+	for (int i=0;i<jeu.plateau.getDominosPlateau()->size();i++)
+						cout << jeu.plateau.getDominosPlateau()->at(i) << endl;
 
 
-	Plateau plat;
+	/*Plateau plat;
 
 	cout << " bornes du plateau: " << plat.getValInf() << "-" << plat.getValSup() << endl;
 
@@ -58,7 +63,7 @@ int main() {
 	plat.ajouterDominoPlateau(d2, 2);
 
 	for (int i=0;i<plat.getDominosPlateau()->size();i++)
-					cout << plat.getDominosPlateau()->at(i) << endl;
+					cout << plat.getDominosPlateau()->at(i) << endl;*/
 
 }
 

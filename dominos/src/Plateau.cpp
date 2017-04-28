@@ -55,7 +55,7 @@ void Plateau::setBeginDominosPlateau(const Domino d){
 
 }
 
-void Plateau::ajouterDominoPlateau(Domino d, int jonction){//pas fait
+void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 	//on regarde si la jonction est avec la valInf du plateau
 	if (jonction == getValInf()) {
 		//on regarde si la jonction se fait avec la valInf ou valSup du domino a poser
@@ -75,9 +75,13 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){//pas fait
 	}
 }
 
-bool Plateau::verifierCompatiblite(int val){//pas fait
-	bool a="True";
-	return a;
+bool Plateau::verifierCompatiblite(int jonction){
+		if (jonction == getValInf())
+			return true;
+		else if (jonction == getValSup())
+			return true;
+		else return false;
+
 }
 
 
