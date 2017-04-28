@@ -18,6 +18,7 @@ private :
 	int valInf;
 	int valSup;
 	vector<Domino>* dominosPlateau;
+
 public :
 	Plateau();
 	int getValInf() const;
@@ -28,7 +29,8 @@ public :
 	void setBackDominosPlateau(const Domino);
 	void setBeginDominosPlateau(const Domino);
 	void ajouterDominoPlateau(Domino, int);
-	bool verifierCompatiblite(int);
+	bool verifierCompatibilite(int);
+	void afficherPlateau();
 };
 
 #endif /* PLATEAU_HPP_ */
