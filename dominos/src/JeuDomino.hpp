@@ -22,8 +22,6 @@ using namespace std;
 #include "Domino.hpp"
 
 class JeuDomino{
-private :
-
 
 	public:
 		JoueurDomino joueur;

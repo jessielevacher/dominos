@@ -63,7 +63,7 @@ void JoueurDomino::setBackListeDominos(const Domino d){
 
 void JoueurDomino::saisirPseudo() {
 	string id;
-	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
+	cout << "Vous avez dï¿½cidï¿½ de jouer, entrez votre pseudo :" << endl;
 	cin >> id;
 	setPseudo(id);
 }
@@ -78,7 +78,19 @@ void JoueurDomino::distribuerDominos(Pioche p){
 
 }
 
-void JoueurDomino::deposerDomino() {//pas fait
+void JoueurDomino::deposerDomino() {
+	int vi, vs, jonc;
+	cout << "Quel domino souhaiter vous poser ?" << endl;
+	cout << "ValSup : ";
+	cin >> vs;
+	cout << "ValInf : ";
+	cin >> vi;
+	cout << "CotÃ© pour la jonction :";
+	cin >>jonc;
+
+	Domino dominoChanger(vi, vs);
+
+	retirerDominoMain(dominoChanger);
 
 }
 void JoueurDomino::retirerDominoMain(Domino d){
@@ -87,7 +99,6 @@ void JoueurDomino::retirerDominoMain(Domino d){
 	while (arret!=true && i<nbDominosRestants){
 		if (listeDominos->at(i).getValInf()==d.getValInf() && listeDominos->at(i).getValSup()==d.getValSup()) {
 			listeDominos->erase(listeDominos->begin()+i);
-			cout << "valeur du i : " << i << endl;
 			arret=true;
 		}
 		i++;
