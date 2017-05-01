@@ -74,7 +74,8 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 	}
 }
 
-bool Plateau::verifierCompatibilite(int jonction){
+bool Plateau::verifierCompatibilite(int jonction){//vérifie que la jonction choisie par le joueur est bien compatible avec le plateau actuel
+
 		if (jonction == getValInf())
 			return true;
 		else if (jonction == getValSup())

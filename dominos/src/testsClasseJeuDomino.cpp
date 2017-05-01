@@ -186,7 +186,7 @@ void testverifierFinJeu()
 }
 
 
-int main()
+/*int main()
 {
 	//testLancerJeu();
 	//testattribuerMain();
@@ -197,7 +197,7 @@ int main()
 	//testjouerUnTour();
 	testverifierFinJeu();
 	return 0;
-}
+}*/
 
 
 

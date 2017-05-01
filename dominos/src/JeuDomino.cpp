@@ -173,21 +173,32 @@ else //sinon c'est j2
 
 bool JeuDomino::verifierFinJeu(){
 // si un des joueurs n'a plus de dominos, le jeu est fini. Sinon, si la pioche est vide et qu'aucun joueur n'a de domino compatible avec le plateau alors le jeu est fini
-	bool finJeu; // vaut vrai si le jeu est fini
+	bool finJeu=false; // vaut vrai si le jeu est fini
+	bool joueurBloque=true;//vaut vrai si le joueur ne peut poser aucun domino
+	bool ordiBloque=true;//vautvrai si l'ordi ne peut poser aucun domino
 
+	//On regarde si le joueur peut jouer
+	for(int i=0;i<joueur.getNbDominosRestants();i++)
+				{
+					if ((plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValSup())==true))
+						joueurBloque=false;  //si joueur possede un domino compatible avec le plateau
+				}
+	//On regarde si l'ordi peut jouer
+	for(int i=0;i<joueur.getNbDominosRestants();i++)
+	{
+	if ((plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValSup())==true))
+						finJeu=false;  //si l'ordi possede un domino compatible avec le plateau
+	}
+
+	//On détermine si nous sommes a la fin du jeu
 	if ((joueur.getNbDominosRestants()==0) || (jOrdi.getNbDominosRestants()==0)) //un des joueurs n'a plus de dominos
 		finJeu = true;
 	else
-		if (pioche.getNbDominos()!=0) // la pioche est non vide
-			finJeu = false;
-		else if (pioche.getNbDominos()==0) //si la pioche est vide
-			for(int i=0;i<joueur.getNbDominosRestants();i=i+1)
-				if ((plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValSup())==true))
-					finJeu=false;  //si joueur possede un domino compatible avec la pioche
-				else if ((plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValSup())==true))
-					finJeu=false;  //si l'ordi possede un domino compatible avec la pioche
-				else
-					finJeu=true;
+	{
+		if (pioche.getNbDominos()==0 && joueurBloque && ordiBloque) //si la pioche est vide
+
+				finJeu=true;
+	}
 	return finJeu;
 }
 

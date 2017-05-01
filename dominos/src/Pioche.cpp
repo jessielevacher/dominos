@@ -49,6 +49,7 @@ if (nbDominos==1)
 	 dominoRetire = dominosPioche->at(0);
 
 	dominosPioche->erase(dominosPioche->begin());
+	nbDominos--;
 }
 else if (nbDominos==0) //pioche vide on ne fait rien
 {
@@ -65,8 +66,9 @@ else
 		dominoRetire = dominosPioche->at(indice);
 
 		dominosPioche->erase(dominosPioche->begin()+indice);
+		nbDominos--;
 }
-	nbDominos--;
+
 
 	return dominoRetire;
 }
