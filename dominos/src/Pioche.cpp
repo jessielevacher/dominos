@@ -41,16 +41,31 @@ vector<Domino>* Pioche::getDominosPioche(){
 }
 
 Domino Pioche::retirerDominoPioche(){
+
+	Domino dominoRetire(0,0);
+
+if (nbDominos==1)
+{
+	 dominoRetire = dominosPioche->at(0);
+
+	dominosPioche->erase(dominosPioche->begin());
+}
+else if (nbDominos==0) //pioche vide on ne fait rien
+{
+	cout <<"la pioche est vide"<< endl;
+}
+else
+{
 	//Permet d'avoir un nombre aléatoire différent à chaque fois
-	//sinon indice = 15 à chaque fois
-	srand (time(NULL));
-	//Renvoie un entier compris entre 0 et nbDominos-1
-	int indice = rand() % nbDominos;
+		//sinon indice = 15 à chaque fois
+		srand (time(NULL));
+		//Renvoie un entier compris entre 0 et nbDominos-1
+		int indice = rand() % nbDominos;
 
-	Domino dominoRetire = dominosPioche->at(indice);
+		dominoRetire = dominosPioche->at(indice);
 
-	dominosPioche->erase(dominosPioche->begin()+indice);
-
+		dominosPioche->erase(dominosPioche->begin()+indice);
+}
 	nbDominos--;
 
 	return dominoRetire;

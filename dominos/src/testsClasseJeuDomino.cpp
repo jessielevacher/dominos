@@ -142,6 +142,49 @@ void testjouerUnTour()
 }
 
 
+void testverifierFinJeu()
+{
+	JeuDomino jeu;
+	string fin;
+
+//On n'est pas à la fin du jeu ni pioche ni jeu des joueurs vide
+	/*bool a=jeu.verifierFinJeu();
+	if (a)
+	{
+		fin="vrai";
+	}
+	else
+	{
+		fin="faux";
+	}
+	cout << "fin du jeu " << fin << endl;*/
+
+//Pioche vide mais joueurs peuvent encore jouer : pas fin du jeu
+
+	jeu.joueur.distribuerDominos(jeu.pioche);
+	jeu.jOrdi.distribuerDominos(jeu.pioche);
+
+	bool a=jeu.verifierFinJeu();
+	if (a)
+	{
+		fin="vrai";
+	}
+	else
+	{
+		fin="faux";
+	}
+	cout << "fin du jeu " << fin << endl;
+//Pioche vide mais les joueurs peuvent encore jouer : pas fin du jeu
+
+//Pioche vide et main des joueurs non vide mais les joueurs ne peuvent plus jouer : bloqué, fin du jeu
+
+//Jeu d'un joueur vide et pioche vide : Fin jeu
+
+//Jeu d'un joueur vide et pioche non vide : Fin jeu
+
+
+}
+
 
 int main()
 {
@@ -151,9 +194,11 @@ int main()
 	//testtourordi();
 	//testaffichageEcranJoueur();
 	//testaffichageEcranOrdi();
-	testjouerUnTour();
+	//testjouerUnTour();
+	testverifierFinJeu();
 	return 0;
 }
+
 
 
 
