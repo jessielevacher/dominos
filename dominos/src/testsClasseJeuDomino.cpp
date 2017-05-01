@@ -10,9 +10,9 @@
 #include <iostream>
 using namespace std;
 
-//Testons les m�thodes de la classe JeuDomino
+//Testons les methodes de la classe JeuDomino
 
-//!!!!!A VOIR
+
 void testLancerJeu() //test le constructeur de JeuDomino
 {
 	JeuDomino jeu;
@@ -284,19 +284,39 @@ void testverifierFinJeu()
 
 }
 
+void testtourordi(){
+
+	JeuDomino jeu;
+	jeu.jOrdi.afficherMain();
+	cout << endl;
+
+for (int i=0;i<7;i++)
+{
+	jeu.tourOrdi();
+
+	jeu.jOrdi.afficherMain();
+	cout << endl;
+	jeu.plateau.afficherPlateau();
+	cout << endl;
+}
+
+
+}
 
 int main()
 {
 	//testLancerJeu();
 	//testattribuerMain();
 	//testjoueurAyantPlusGrandDouble();
-	//testtourordi();
+	testtourordi();
 	//testaffichageEcranJoueur();
 	//testaffichageEcranOrdi();
 	//testjouerUnTour();
-	testverifierFinJeu();
+	//testverifierFinJeu();
 	return 0;
 }
+
+
 
 
 

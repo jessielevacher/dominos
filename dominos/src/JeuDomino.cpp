@@ -247,36 +247,52 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 
 }
 
-//A TESTER QUAND ON AURA LES FONCTIONS
+
 void JeuDomino::tourOrdi(){ //Intelligence artificielle
 //Si il a un ou plusieurs dominos qui peuvent �tre pos� sur le plateau, alors il en pose un
 	//On le choisi de fa�on � ce que le domino ayant le plus grand nombre de points soit pos�
 	//de mani�re � avoir plus de chance de gagner si le jeu et bloqu� avant la fin
-	bool dominoChoisi="False";
+	bool dominoChoisi=false;
 	Domino d(-1,-1);
+	int val=0;
+
 	for (int i=0;i<jOrdi.getNbDominosRestants();++i)
 	{
 		if (jOrdi.getListeDominos()->at(i).getValInf()+jOrdi.getListeDominos()->at(i).getValSup()>d.getValInf()+d.getValSup())
+		{
 			if (jOrdi.getListeDominos()->at(i).getValInf()==plateau.getValInf())
 			{
 				d=jOrdi.getListeDominos()->at(i);
-				int val=jOrdi.getListeDominos()->at(i).getValInf();
-				dominoChoisi="True";
+				val=jOrdi.getListeDominos()->at(i).getValInf();
+				dominoChoisi=true;
 			}
-			else
-			{
+			else if (jOrdi.getListeDominos()->at(i).getValInf()==plateau.getValSup())
+				{
 					d=jOrdi.getListeDominos()->at(i);
-					int val=jOrdi.getListeDominos()->at(i).getValSup();
-					dominoChoisi="True";
-			}
+					val=jOrdi.getListeDominos()->at(i).getValInf();
+					dominoChoisi=true;
+				}
+				else if (jOrdi.getListeDominos()->at(i).getValSup()==plateau.getValInf())
+						{
+								d=jOrdi.getListeDominos()->at(i);
+								val=jOrdi.getListeDominos()->at(i).getValSup();
+								dominoChoisi=true;
+						}
+					else if (jOrdi.getListeDominos()->at(i).getValSup()==plateau.getValSup())
+							{
+									d=jOrdi.getListeDominos()->at(i);
+									val=jOrdi.getListeDominos()->at(i).getValSup();
+									dominoChoisi=true;
+							}
+		}
 
 	}
 	 //S'il ne peut pas jouer, alors il pioche
 	if (dominoChoisi)
+	{
 		jOrdi.retirerDominoMain(d);
-		//plateau.ajouterDominoPlateau(d, val);
+		plateau.ajouterDominoPlateau(d, val);
+	}
 	else
 		jOrdi.piocher(pioche);
 }
-
-
