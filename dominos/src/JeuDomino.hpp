@@ -35,7 +35,7 @@ class JeuDomino{
 		JeuDomino();
 		void poserPion();
 		void piocher();
-		void verifierFinJeu();
+		bool verifierFinJeu();
 		void jouerUnTour();
 		void tourOrdi();
 		void attribuerMain();

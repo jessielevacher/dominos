@@ -171,8 +171,26 @@ else //sinon c'est j2
 	return j;
 }
 
-void JeuDomino::verifierFinJeu(){//pas fait
+bool JeuDomino::verifierFinJeu(){
+// si un des joueurs n'a plus de dominos, le jeu est fini. Sinon, si la pioche est vide et qu'aucun joueur n'a de domino compatible avec le plateau alors le jeu est fini
+	bool finJeu; // vaut vrai si le jeu est fini
+
+	if ((joueur.getNbDominosRestants()==0) || (jOrdi.getNbDominosRestants()==0)) //un des joueurs n'a plus de dominos
+		finJeu = true;
+	else
+		if (pioche.getNbDominos()!=0) // la pioche est non vide
+			finJeu = false;
+		else if (pioche.getNbDominos()==0) //si la pioche est vide
+			for(int i=0;i<joueur.getNbDominosRestants();i=i+1)
+				if ((plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(joueur.getListeDominos()->at(i).getValSup())==true))
+					finJeu=false;  //si joueur possede un domino compatible avec la pioche
+				else if ((plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValSup())==true))
+					finJeu=false;  //si l'ordi possede un domino compatible avec la pioche
+				else
+					finJeu=true;
+	return finJeu;
 }
+
 
 
 void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour du joueur de jouer
