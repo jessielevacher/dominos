@@ -77,8 +77,9 @@ void testafficherPlateau(){
 			plateau.afficherPlateau();
 
 }
-int main(){
+
+/*int main(){
 	//testSortieDomino();
 	//cout<<"\n \n"<<endl;
 	//testafficherPlateau();
-}
+}*/

@@ -180,17 +180,48 @@ else //sinon c'est j2
 void JeuDomino::verifierFinJeu(){//pas fait
 }
 
-//A TESTER QUAND ON AURA LES FONCTIONS D AFFICHAGE
-void JeuDomino::affichageEcranJoueur(){ //Affichage ï¿½cran lorsque c'est au tour du joueur de jouer
-	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
-	//plateau.affichagePlateau();
-	//joueur.affichageJeu();
+
+void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour du joueur de jouer
+
+	//On précise le nombre de dominos restants dans la pioche
+	if (pioche.getNbDominos()==1 || pioche.getNbDominos()==0)
+	{
+		cout << " il reste " << pioche.getNbDominos() << " domino dans la pioche " << endl;
+	}
+	else
+		{
+		cout << " il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
+		}
+	//On affiche le plateau du jeu mis à jour
+	plateau.afficherPlateau();
+	cout <<  endl;
+	cout <<  endl;
+	//Ainsi que les dominos restants dans la main du joueur
+	cout << " Voici vos dominos :"<< endl;
+	joueur.afficherMain();
+	cout <<  endl;
+	cout << " A vous de jouer !"<< endl;
+	cout <<  endl;
 }
 
-//A TESTER QUAND ON AURA LES FONCTIONS D AFFICHAGE
-void JeuDomino::affichageEcranOrdi(){ //Affichage ï¿½cran lorsque c'est au tour de l'ordi de jouer
-	cout << " pioche : " << pioche.getNbDominos() << " dominos restants " << endl;
-		//plateau.affichagePlateau();
+
+void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de l'ordi de jouer
+
+	//On précise le nombre de dominos restants dans la pioche
+	if (pioche.getNbDominos()==1 || pioche.getNbDominos()==0)
+		{
+			cout << " il reste " << pioche.getNbDominos() << " domino dans la pioche " << endl;
+		}
+		else
+			{
+			cout << " il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
+			}
+	//On affiche le plateau du jeu mis à jour
+		plateau.afficherPlateau();
+	//On n'affiche pas sa main car le joueur (qui est son adversaire) ne doit pas la voir
+		cout <<  endl;
+		cout <<  endl;
+
 }
 
 //A TESTER QUAND ON AURA LES FONCTIONS

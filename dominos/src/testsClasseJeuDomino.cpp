@@ -112,12 +112,48 @@ cout << " le joueur ayant le plus grand double est : " << j.getPseudo() << endl;
 }
 
 
-
-/*int main()
+void testaffichageEcranJoueur()
 {
-	testLancerJeu();
+	JeuDomino jeu;
+
+	jeu.affichageEcranJoueur();
+
+}
+
+void testaffichageEcranOrdi()
+{
+	JeuDomino jeu;
+
+	jeu.affichageEcranOrdi();
+
+	cout << "bonjour"<<endl;
+
+}
+
+void testjouerUnTour()
+{
+	JeuDomino jeu;
+	cout << "la main est à " << jeu.main.getPseudo() <<endl;
+
+	jeu.jouerUnTour();
+	jeu.jouerUnTour();
+	jeu.jouerUnTour();
+
+}
+
+
+
+int main()
+{
+	//testLancerJeu();
 	//testattribuerMain();
 	//testjoueurAyantPlusGrandDouble();
+	//testtourordi();
+	//testaffichageEcranJoueur();
+	//testaffichageEcranOrdi();
+	testjouerUnTour();
 	return 0;
-}*/
+}
+
+
 
