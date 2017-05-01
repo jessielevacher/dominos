@@ -80,5 +80,5 @@ void testafficherPlateau(){
 int main(){
 	//testSortieDomino();
 	//cout<<"\n \n"<<endl;
-	testafficherPlateau();
+	//testafficherPlateau();
 }

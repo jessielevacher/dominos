@@ -93,14 +93,14 @@ void JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 
 	if (verifierDominoMain(dominoChanger)) {
 		if (jonc == vi) {
-			if (plat.verifierCompatiblite(dominoChanger.getValInf())) {
+			if (plat.verifierCompatibilite(dominoChanger.getValInf())) {
 				retirerDominoMain(dominoChanger);
 				plat.ajouterDominoPlateau(dominoChanger, dominoChanger.getValInf());
 			} else
 				piocher(p);
 		}
 		else {
-				if (plat.verifierCompatiblite(dominoChanger.getValSup())) {
+				if (plat.verifierCompatibilite(dominoChanger.getValSup())) {
 					retirerDominoMain(dominoChanger);
 					plat.ajouterDominoPlateau(dominoChanger, dominoChanger.getValSup());
 				} else
