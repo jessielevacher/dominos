@@ -105,6 +105,7 @@ void JeuDomino::piocher(){ //permet au joueur qui � la main (� qui c'est le 
 
 
 
+
 void JeuDomino::jouerUnTour(){ //correspond au tour de jeu d'un joueur, il faut diff�rencier le tour de jeu de l'utilisateur de celui de l'ordinateur
 
 if (main.getPseudo()==joueur.getPseudo())
@@ -112,12 +113,20 @@ if (main.getPseudo()==joueur.getPseudo())
 	//Afficher le plateau, le nombre de dominos restants dans la pioche et sa liste de domino
 	affichageEcranJoueur();
 	//Lui demander si il souhaite d�poser un domino ou piocher
+	cout <<"Poser un domino (1)"<< endl;
+	cout <<"Piocher (2)"<< endl;
+	int choix;
+	cin >> choix;
+	if (choix==1)
 	//Si d�poser un domino alors:
 		joueur.deposerDomino(plateau, pioche);
-	//Si piocher alors il pioche
-		joueur.piocher(pioche);
+	else
+	{//Si piocher alors il pioche
+		joueur.piocher(pioche);}
 	//Changer de main
 	main=jOrdi;
+	cout << " ###### ###### ###### ######"<< endl;
+		cout <<  endl;
 	}
 else
 {//Pour l'ordinateur
@@ -127,6 +136,8 @@ else
 	tourOrdi();
 	//Changer de main
 	main=joueur;
+	cout << " ###### ###### ###### ######"<< endl;
+		cout <<  endl;
 }
 }
 
@@ -276,8 +287,7 @@ void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour 
 	cout <<  endl;
 	cout << " A vous de jouer !"<< endl;
 	cout <<  endl;
-	cout << " ###### ###### ###### ######"<< endl;
-	cout <<  endl;
+
 }
 
 
@@ -299,8 +309,7 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 	//On n'affiche pas sa main car le joueur (qui est son adversaire) ne doit pas la voir
 		cout <<  endl;
 		cout <<  endl;
-		cout << " ###### ###### ###### ######"<< endl;
-		cout <<  endl;
+
 
 }
 

@@ -317,7 +317,7 @@ for (int i=0;i<7;i++)
 
 }
 
-int main()
+/*int main()
 {
 	//testLancerJeu();
 	//testattribuerMain();
@@ -329,7 +329,7 @@ int main()
 	testverifierFinJeu();
 	//testfinjeu();
 	return 0;
-}
+}*/
 
 
 
