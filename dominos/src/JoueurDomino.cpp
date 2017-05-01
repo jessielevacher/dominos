@@ -82,10 +82,10 @@ void JoueurDomino::distribuerDominos(Pioche p){
 void JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 	int vi, vs, jonc;
 	cout << "Quel domino souhaiter vous poser ?" << endl;
-	cout << "ValSup : ";
-	cin >> vs;
 	cout << "ValInf : ";
 	cin >> vi;
+	cout << "ValSup : ";
+	cin >> vs;
 	cout << "Coté pour la jonction :";
 	cin >> jonc;
 
