@@ -184,7 +184,7 @@ bool JeuDomino::verifierFinJeu(){
 						joueurBloque=false;  //si joueur possede un domino compatible avec le plateau
 				}
 	//On regarde si l'ordi peut jouer
-	for(int i=0;i<joueur.getNbDominosRestants();i++)
+	for(int i=0;i<jOrdi.getNbDominosRestants();i++)
 	{
 	if ((plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValInf())==true)||(plateau.verifierCompatibilite(jOrdi.getListeDominos()->at(i).getValSup())==true))
 						finJeu=false;  //si l'ordi possede un domino compatible avec le plateau

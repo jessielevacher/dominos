@@ -76,9 +76,9 @@ void testPioche()
 				}
 }
 
-int main()
+/*int main()
 {
 	testPioche();
 	return 0;
-}
+}*/
 

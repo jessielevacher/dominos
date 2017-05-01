@@ -161,8 +161,10 @@ void testverifierFinJeu()
 
 //Pioche vide mais joueurs peuvent encore jouer : pas fin du jeu
 
-	jeu.joueur.distribuerDominos(jeu.pioche);
+	/*jeu.joueur.distribuerDominos(jeu.pioche);
 	jeu.jOrdi.distribuerDominos(jeu.pioche);
+
+		cout << "dominos restants dans la pioche :" << jeu.pioche.getNbDominos() << endl;
 
 	bool a=jeu.verifierFinJeu();
 	if (a)
@@ -173,20 +175,117 @@ void testverifierFinJeu()
 	{
 		fin="faux";
 	}
-	cout << "fin du jeu " << fin << endl;
-//Pioche vide mais les joueurs peuvent encore jouer : pas fin du jeu
+	cout << "fin du jeu " << fin << endl;*/
 
 //Pioche vide et main des joueurs non vide mais les joueurs ne peuvent plus jouer : bloqué, fin du jeu
 
-//Jeu d'un joueur vide et pioche vide : Fin jeu
+
+	jeu.plateau.afficherPlateau();
+	cout<< endl;
+
+	for (int i=0;i<14;i++)
+	{
+		jeu.pioche.retirerDominoPioche();
+	}
+	cout << "dominos restants dans la pioche :" << jeu.pioche.getNbDominos() << endl;
+
+	int c = jeu.joueur.getNbDominosRestants();
+	for (int i=0;i<jeu.joueur.getNbDominosRestants()-1;i++)
+	{
+	jeu.joueur.getListeDominos()->erase(jeu.joueur.getListeDominos()->begin());
+	c--;
+	}
+	jeu.joueur.setNbDominosRestants(c);
+
+	int b=jeu.jOrdi.getNbDominosRestants();
+	for (int i=0;i<jeu.jOrdi.getNbDominosRestants()-1;i++)
+		{
+	jeu.jOrdi.getListeDominos()->erase(jeu.jOrdi.getListeDominos()->begin());
+	b--;
+	}
+	jeu.jOrdi.setNbDominosRestants(b);
+
+	jeu.joueur.afficherMain();
+	cout<< endl;
+
+	jeu.jOrdi.afficherMain();
+	cout<< endl;
+
+
+
+	bool a=jeu.verifierFinJeu();
+		if (a)
+		{
+			fin="vrai";
+		}
+		else
+		{
+			fin="faux";
+		}
+		cout << "fin du jeu " << fin << endl;
+
+//Jeu d'un joueur vide et pioche vide : Fin jeu*/
+
+
+ /*for (int i=0;i<14;i++)
+	{
+		jeu.pioche.retirerDominoPioche();
+	}
+	cout << "dominos restants dans la pioche :" << jeu.pioche.getNbDominos() << endl;
+
+
+	int c = jeu.joueur.getNbDominosRestants();//on vide le jeu du joueur
+		for (int i=0;i<jeu.joueur.getNbDominosRestants();i++)
+		{
+		jeu.joueur.getListeDominos()->erase(jeu.joueur.getListeDominos()->begin());
+		c--;
+		}
+		jeu.joueur.setNbDominosRestants(c);
+
+		cout << jeu.joueur.getNbDominosRestants() << endl;
+
+		bool a=jeu.verifierFinJeu();//on verifie si on est bien a la fin du jeu
+				if (a)
+				{
+					fin="vrai";
+				}
+				else
+				{
+					fin="faux";
+				}
+				cout << "fin du jeu " << fin << endl;*/
+
 
 //Jeu d'un joueur vide et pioche non vide : Fin jeu
+
+	/*int c = jeu.jOrdi.getNbDominosRestants();//on vide le jeu du joueur
+			for (int i=0;i<jeu.jOrdi.getNbDominosRestants();i++)
+			{
+			jeu.jOrdi.getListeDominos()->erase(jeu.jOrdi.getListeDominos()->begin());
+			c--;
+			}
+			jeu.jOrdi.setNbDominosRestants(c);
+
+			cout << jeu.jOrdi.getNbDominosRestants() << endl;
+
+			bool a=jeu.verifierFinJeu();//on verifie si on est bien a la fin du jeu
+							if (a)
+							{
+								fin="vrai";
+							}
+							else
+							{
+								fin="faux";
+							}
+							cout << "fin du jeu " << fin << endl;*/
+
+
 
 
 }
 
 
-/*int main()
+int main()
 {
 	//testLancerJeu();
 	//testattribuerMain();
@@ -197,7 +296,7 @@ void testverifierFinJeu()
 	//testjouerUnTour();
 	testverifierFinJeu();
 	return 0;
-}*/
+}
 
 
 
