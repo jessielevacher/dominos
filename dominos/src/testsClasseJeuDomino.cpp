@@ -213,7 +213,7 @@ void testverifierFinJeu()
 
 
 
-	bool a=jeu.verifierFinJeu();
+	bool a=jeu.verifierFinJeu();//on verifie que l'on est bien à la fin du jeu
 		if (a)
 		{
 			fin="vrai";
@@ -223,6 +223,8 @@ void testverifierFinJeu()
 			fin="faux";
 		}
 		cout << "fin du jeu " << fin << endl;
+
+		jeu.finJeu();
 
 //Jeu d'un joueur vide et pioche vide : Fin jeu*/
 
@@ -253,7 +255,10 @@ void testverifierFinJeu()
 				{
 					fin="faux";
 				}
-				cout << "fin du jeu " << fin << endl;*/
+				cout << "fin du jeu " << fin << endl;
+
+				jeu.finJeu(); //joueur gagne car main vide
+				*/
 
 
 //Jeu d'un joueur vide et pioche non vide : Fin jeu
@@ -277,12 +282,21 @@ void testverifierFinJeu()
 							{
 								fin="faux";
 							}
-							cout << "fin du jeu " << fin << endl;*/
+							cout << "fin du jeu " << fin << endl;
+
+
+							jeu.finJeu(); //ordi gagne car main vide*/
 
 
 
 
 }
+
+//pas teste !!!
+void testFinJeu(){//teste le cas ou il y a egalite
+
+
+	}
 
 void testtourordi(){
 
@@ -308,11 +322,12 @@ int main()
 	//testLancerJeu();
 	//testattribuerMain();
 	//testjoueurAyantPlusGrandDouble();
-	testtourordi();
+	//testtourordi();
 	//testaffichageEcranJoueur();
 	//testaffichageEcranOrdi();
 	//testjouerUnTour();
-	//testverifierFinJeu();
+	testverifierFinJeu();
+	//testfinjeu();
 	return 0;
 }
 

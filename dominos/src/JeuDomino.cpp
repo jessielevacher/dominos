@@ -104,7 +104,7 @@ void JeuDomino::piocher(){ //permet au joueur qui ï¿½ la main (ï¿½ qui c'est le 
 */
 
 
-//A TESTER QUAND ON AURA LES FONCTIONS
+
 void JeuDomino::jouerUnTour(){ //correspond au tour de jeu d'un joueur, il faut diffï¿½rencier le tour de jeu de l'utilisateur de celui de l'ordinateur
 
 if (main.getPseudo()==joueur.getPseudo())
@@ -171,7 +171,11 @@ else //sinon c'est j2
 	return j;
 }
 
+
 bool JeuDomino::verifierFinJeu(){
+	//Cette méthode vérifie si l'on est à la fin du jeu
+	//Et si c'est le cas, alors elle attribue vrai a l'attribut "gagne" du joueur ayant gagne.
+
 // si un des joueurs n'a plus de dominos, le jeu est fini. Sinon, si la pioche est vide et qu'aucun joueur n'a de domino compatible avec le plateau alors le jeu est fini
 	bool finJeu=false; // vaut vrai si le jeu est fini
 	bool joueurBloque=true;//vaut vrai si le joueur ne peut poser aucun domino
@@ -191,18 +195,64 @@ bool JeuDomino::verifierFinJeu(){
 	}
 
 	//On détermine si nous sommes a la fin du jeu
-	if ((joueur.getNbDominosRestants()==0) || (jOrdi.getNbDominosRestants()==0)) //un des joueurs n'a plus de dominos
-		finJeu = true;
-	else
-	{
-		if (pioche.getNbDominos()==0 && joueurBloque && ordiBloque) //si la pioche est vide
-
-				finJeu=true;
-	}
+	if ((joueur.getNbDominosRestants()==0) ) //un des joueurs n'a plus de dominos
+		{
+			finJeu = true;
+			joueur.setGagne(true);
+		}
+		else {
+			if (jOrdi.getNbDominosRestants()==0)
+				{
+					finJeu = true;
+					jOrdi.setGagne(true);
+				}
+			else
+			{
+				if (pioche.getNbDominos()==0 && joueurBloque && ordiBloque) //si la pioche est vide
+					finJeu=true;
+					jOrdi.setGagne(true);
+					joueur.setGagne(true);
+			}
+		}
 	return finJeu;
 }
 
+void JeuDomino::finJeu()
+{
+	int nbPointJoueur=0;
+	int nbPointOrdi=0;
 
+	if (joueur.getGagne() && jOrdi.getGagne())
+	{//On compte le nombre de points restants sur les dominos des joueurs
+		for (int i=0;i<joueur.getNbDominosRestants();i++)
+		{
+			nbPointJoueur=nbPointJoueur+joueur.getListeDominos()->at(i).getValInf()+joueur.getListeDominos()->at(i).getValSup();
+		}
+
+		for (int i=0;i<jOrdi.getNbDominosRestants();i++)
+		{
+			nbPointOrdi=nbPointOrdi+jOrdi.getListeDominos()->at(i).getValInf()+jOrdi.getListeDominos()->at(i).getValSup();
+		}
+		if (nbPointJoueur>nbPointOrdi)
+			cout << "Malheureusement l'ordinateur a ete plus fort que vous : votre adversaire a gagne" << endl;
+		else
+		{
+			if (nbPointJoueur<nbPointOrdi)
+				cout << "Bien joué ! : vous etes le gagnant " << endl;
+			else
+			{
+				cout << "Match nul !"<< endl;
+			}
+		}
+
+	}
+	else if(joueur.getGagne())
+	{
+		cout << "Bien joué ! : vous etes le gagnant " << endl;
+	}
+	else
+		cout << "Malheureusement l'ordinateur a ete plus fort que vous : votre adversaire a gagne" << endl;
+}
 
 void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour du joueur de jouer
 
@@ -223,7 +273,10 @@ void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour 
 	cout << " Voici vos dominos :"<< endl;
 	joueur.afficherMain();
 	cout <<  endl;
+	cout <<  endl;
 	cout << " A vous de jouer !"<< endl;
+	cout <<  endl;
+	cout << " ###### ###### ###### ######"<< endl;
 	cout <<  endl;
 }
 
@@ -241,12 +294,15 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 			}
 	//On affiche le plateau du jeu mis à jour
 		plateau.afficherPlateau();
+		cout <<  endl;
+		cout << " Votre adversaire est en train de jouer.. " << endl;
 	//On n'affiche pas sa main car le joueur (qui est son adversaire) ne doit pas la voir
 		cout <<  endl;
 		cout <<  endl;
+		cout << " ###### ###### ###### ######"<< endl;
+		cout <<  endl;
 
 }
-
 
 void JeuDomino::tourOrdi(){ //Intelligence artificielle
 //Si il a un ou plusieurs dominos qui peuvent ï¿½tre posï¿½ sur le plateau, alors il en pose un
