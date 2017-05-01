@@ -36,13 +36,7 @@ JeuDomino::JeuDomino(){ //constructeur
 		joueur.distribuerDominos(pi);
 		jOrdi.distribuerDominos(pi);
 
-		cout << " dominos du joueur " << endl;
-			for (int i=0;i<7;i++)
-			cout << joueur.getListeDominos()->at(i) <<endl;
 
-			cout << " dominos du ordi " << endl;
-					for (int i=0;i<7;i++)
-					cout << jOrdi.getListeDominos()->at(i) <<endl;
 
 
 	//On attribut la main au premier tour � un des 2 joueurs
