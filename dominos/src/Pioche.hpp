@@ -11,7 +11,7 @@
 /*!
  * \file Pioche.hpp
  * \brief Pioche de dominos
- * \author Jessie Levacher
+ * \author {Jessie Levacher, Léa Manneheut}
  */
 
 #ifndef SRC_PIOCHE_HPP_
@@ -64,8 +64,6 @@ public:
 
 	/*!
 	 * \brief Retrait d'un domino de la pioche
-	 *
-	 * Cette méthode permet de piocher, c'est-à-dire d'enlever aléatoirement un domino de la pioche
 	 *
 	 * \return le domino pioché
 	 */
