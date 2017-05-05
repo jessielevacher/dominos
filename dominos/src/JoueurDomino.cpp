@@ -10,8 +10,20 @@
 #include "Domino.hpp"
 #include "Plateau.hpp"
 
+/*!
+ * \file Domino.cpp
+ * \brief Domino
+ * \author {Léa Manneheut, Laëtitia Guillard}
+ */
+
 using namespace std;
 
+/*!
+*  \brief Constructeur
+*
+*  Constructeur de la classe JoueurDomino.
+*
+*/
 JoueurDomino::JoueurDomino(){
 	pseudo="null";
 	main=false;
@@ -20,27 +32,62 @@ JoueurDomino::JoueurDomino(){
 	listeDominos=new vector<Domino>();;
 }
 
-
+/*!
+ * \brief Permet d'accéder au pseudo du joueur
+ *
+ * \return le pseudo du joueur
+ */
 string JoueurDomino::getPseudo() {
 	return pseudo;
 }
 
+/*!
+ * \brief Permet de modifier le pseudo du joueur
+ *
+ * \param pseudo du joueur
+ *
+ */
 void JoueurDomino::setPseudo(string p) {
 	pseudo=p;
 }
 
+/*!
+ * \brief Permet de savoir si c'est au joueur de jouer
+ *
+ * \return un booléen (vrai si c'est au joueur de jouer, faux sinon)
+ *
+ */
 bool JoueurDomino::getMain() {
 	return main;
 }
 
+/*!
+ * \brief Permet de modifier la main du joueur
+ *
+ * \param booléen
+ *
+ */
 void JoueurDomino::setMain(bool m) {
 	main=m;
 }
 
+/*!
+ * \brief Permet de donner le nombre de dominos restants du joueur
+ *
+ * \return le nombre de dominos restants
+ *
+ */
 int JoueurDomino::getNbDominosRestants() {
 	return nbDominosRestants;
 }
 
+
+/*!
+ * \brief Permet de modifier nombre de dominos restants du joueur
+ *
+ * \param nombre de dominos
+ *
+ */
 void JoueurDomino::setNbDominosRestants(int n) {
 	nbDominosRestants=n;
 }
