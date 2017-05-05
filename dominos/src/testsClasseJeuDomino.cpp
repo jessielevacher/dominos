@@ -133,7 +133,7 @@ void testaffichageEcranOrdi()
 void testjouerUnTour()
 {
 	JeuDomino jeu;
-	cout << "la main est à " << jeu.main.getPseudo() <<endl;
+	cout << "la main est ï¿½ " << jeu.main.getPseudo() <<endl;
 
 	jeu.jouerUnTour();
 	jeu.jouerUnTour();
@@ -147,7 +147,7 @@ void testverifierFinJeu()
 	JeuDomino jeu;
 	string fin;
 
-//On n'est pas à la fin du jeu ni pioche ni jeu des joueurs vide
+//On n'est pas ï¿½ la fin du jeu ni pioche ni jeu des joueurs vide
 	/*bool a=jeu.verifierFinJeu();
 	if (a)
 	{
@@ -177,10 +177,10 @@ void testverifierFinJeu()
 	}
 	cout << "fin du jeu " << fin << endl;*/
 
-//Pioche vide et main des joueurs non vide mais les joueurs ne peuvent plus jouer : bloqué, fin du jeu
+//Pioche vide et main des joueurs non vide mais les joueurs ne peuvent plus jouer : bloquï¿½, fin du jeu
 
 
-	jeu.plateau.afficherPlateau();
+	/*jeu.plateau.afficherPlateau();
 	cout<< endl;
 
 	for (int i=0;i<14;i++)
@@ -213,7 +213,7 @@ void testverifierFinJeu()
 
 
 
-	bool a=jeu.verifierFinJeu();//on verifie que l'on est bien à la fin du jeu
+	bool a=jeu.verifierFinJeu();//on verifie que l'on est bien ï¿½ la fin du jeu
 		if (a)
 		{
 			fin="vrai";
@@ -224,7 +224,7 @@ void testverifierFinJeu()
 		}
 		cout << "fin du jeu " << fin << endl;
 
-		jeu.finJeu();
+		jeu.finJeu();*/
 
 //Jeu d'un joueur vide et pioche vide : Fin jeu*/
 
@@ -258,7 +258,7 @@ void testverifierFinJeu()
 				cout << "fin du jeu " << fin << endl;
 
 				jeu.finJeu(); //joueur gagne car main vide
-				*/
+*/
 
 
 //Jeu d'un joueur vide et pioche non vide : Fin jeu
@@ -329,8 +329,8 @@ for (int i=0;i<7;i++)
 	testverifierFinJeu();
 	//testfinjeu();
 	return 0;
-}*/
-
+}
+*/
 
 
 

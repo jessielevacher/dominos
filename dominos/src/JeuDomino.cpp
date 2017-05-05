@@ -360,11 +360,11 @@ void JeuDomino::tourOrdi(){ //Intelligence artificielle
 		jOrdi.retirerDominoMain(d);
 		plateau.ajouterDominoPlateau(d, val);
 		cout << "Domino joué par votre adversaire : " << d << endl;
-		cout << "Il lui reste " << jOrdi.getNbDominosRestants() << "domino(s)"<< endl;
+		cout << "Il lui reste " << jOrdi.getNbDominosRestants() << " domino(s)"<< endl;
 	}
 	else
-		jOrdi.piocher(pioche);
+		{jOrdi.piocher(pioche);
 		cout << "Votre adversaire a pioché. " << endl;
 		cout << "Il lui reste " << jOrdi.getNbDominosRestants() << "domino(s)"<< endl;
-
+		}
 }
