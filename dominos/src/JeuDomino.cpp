@@ -119,7 +119,7 @@ if (main.getPseudo()==joueur.getPseudo())
 	cin >> choix;
 	if (choix==1)
 	//Si dï¿½poser un domino alors:
-		joueur.deposerDomino(plateau, pioche);
+		plateau=joueur.deposerDomino(plateau, pioche);
 	else
 	{//Si piocher alors il pioche
 		joueur.piocher(pioche);}
@@ -184,7 +184,7 @@ else //sinon c'est j2
 
 
 bool JeuDomino::verifierFinJeu(){
-	//Cette méthode vérifie si l'on est à la fin du jeu
+	//Cette mï¿½thode vï¿½rifie si l'on est ï¿½ la fin du jeu
 	//Et si c'est le cas, alors elle attribue vrai a l'attribut "gagne" du joueur ayant gagne.
 
 // si un des joueurs n'a plus de dominos, le jeu est fini. Sinon, si la pioche est vide et qu'aucun joueur n'a de domino compatible avec le plateau alors le jeu est fini
@@ -205,7 +205,7 @@ bool JeuDomino::verifierFinJeu(){
 						finJeu=false;  //si l'ordi possede un domino compatible avec le plateau
 	}
 
-	//On détermine si nous sommes a la fin du jeu
+	//On dï¿½termine si nous sommes a la fin du jeu
 	if ((joueur.getNbDominosRestants()==0) ) //un des joueurs n'a plus de dominos
 		{
 			finJeu = true;
@@ -249,7 +249,7 @@ void JeuDomino::finJeu()
 		else
 		{
 			if (nbPointJoueur<nbPointOrdi)
-				cout << "Bien joué ! : vous etes le gagnant " << endl;
+				cout << "Bien jouï¿½ ! : vous etes le gagnant " << endl;
 			else
 			{
 				cout << "Match nul !"<< endl;
@@ -259,7 +259,7 @@ void JeuDomino::finJeu()
 	}
 	else if(joueur.getGagne())
 	{
-		cout << "Bien joué ! : vous etes le gagnant " << endl;
+		cout << "Bien jouï¿½ ! : vous etes le gagnant " << endl;
 	}
 	else
 		cout << "Malheureusement l'ordinateur a ete plus fort que vous : votre adversaire a gagne" << endl;
@@ -267,7 +267,7 @@ void JeuDomino::finJeu()
 
 void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour du joueur de jouer
 
-	//On précise le nombre de dominos restants dans la pioche
+	//On prï¿½cise le nombre de dominos restants dans la pioche
 	if (pioche.getNbDominos()==1 || pioche.getNbDominos()==0)
 	{
 		cout << " il reste " << pioche.getNbDominos() << " domino dans la pioche " << endl;
@@ -276,7 +276,7 @@ void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour 
 		{
 		cout << " il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
 		}
-	//On affiche le plateau du jeu mis à jour
+	//On affiche le plateau du jeu mis ï¿½ jour
 	plateau.afficherPlateau();
 	cout <<  endl;
 	cout <<  endl;
@@ -293,7 +293,7 @@ void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour 
 
 void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de l'ordi de jouer
 
-	//On précise le nombre de dominos restants dans la pioche
+	//On prï¿½cise le nombre de dominos restants dans la pioche
 	if (pioche.getNbDominos()==1 || pioche.getNbDominos()==0)
 		{
 			cout << " il reste " << pioche.getNbDominos() << " domino dans la pioche " << endl;
@@ -302,7 +302,7 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 			{
 			cout << " il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
 			}
-	//On affiche le plateau du jeu mis à jour
+	//On affiche le plateau du jeu mis ï¿½ jour
 		plateau.afficherPlateau();
 		cout <<  endl;
 		cout << " Votre adversaire est en train de jouer.. " << endl;

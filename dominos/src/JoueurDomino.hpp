@@ -39,7 +39,7 @@ public :
 	void setBackListeDominos(const Domino);
 	void saisirPseudo();
 	void distribuerDominos(Pioche);
-	void deposerDomino(Plateau, Pioche);
+	Plateau deposerDomino(Plateau, Pioche);
 	void retirerDominoMain(Domino);
 	void piocher(Pioche);
 	void ajouterDominoMain(Domino);

@@ -79,7 +79,7 @@ void JoueurDomino::distribuerDominos(Pioche p){
 
 }
 
-void JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
+Plateau JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 	int vi, vs, jonc;
 	cout << "Quel domino souhaiter vous poser ?" << endl;
 	cout << "ValInf : ";
@@ -107,6 +107,8 @@ void JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 					piocher(p);
 		}
 	} else piocher(p);
+
+	return plat;
 }
 
 
