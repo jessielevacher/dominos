@@ -9,6 +9,7 @@
 #include "JoueurDomino.hpp"
 #include "Pioche.hpp"
 #include "JeuDomino.hpp"
+#include <unistd.h>
 
 JeuDomino::JeuDomino(){ //constructeur
 
@@ -309,6 +310,7 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 	//On n'affiche pas sa main car le joueur (qui est son adversaire) ne doit pas la voir
 		cout <<  endl;
 		cout <<  endl;
+		sleep(4);
 
 
 }
