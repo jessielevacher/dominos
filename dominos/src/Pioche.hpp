@@ -65,6 +65,10 @@ public:
 	/*!
 	 * \brief Retrait d'un domino de la pioche
 	 *
+	 * Cette méthode permet de piocher,
+	 * c'est-à-dire d'enlever aléatoirement un domino de la pioche,
+	 * si elle n'est pas vide
+	 *
 	 * \return le domino pioché
 	 */
 	Domino retirerDominoPioche();
