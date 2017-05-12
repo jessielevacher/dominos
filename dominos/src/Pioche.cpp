@@ -86,7 +86,7 @@ Domino Pioche::retirerDominoPioche(){
 		nbDominos--;
 	}
 	else if (nbDominos==0){ //pioche vide on ne fait rien
-		cout <<"la pioche est vide"<< endl;
+		cout <<"La pioche est vide"<< endl;
 	}
 	else {
 		//Permet d'avoir un nombre aléatoire différent à chaque fois

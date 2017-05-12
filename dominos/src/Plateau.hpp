@@ -11,18 +11,21 @@
 #include <vector>
 #include <string>
 #include "Domino.hpp"
+
 using namespace std;
+
 /*!
  * \class Plateau
+ *
  * \brief Classe représentant le plateau de jeu
  *
- *  La classe gère les dominos joués par les joueurs
+ *  La classe gère le plateau du jeu
  */
 
 class Plateau{
 private :
 	int valInf; /*!< Valeur inférieure du plateau*/
-	int valSup;/*!< Valeur supérieure du plateau*/
+	int valSup; /*!< Valeur supérieure du plateau*/
 	vector<Domino>* dominosPlateau; /*!< Vecteur des dominos posés sur le plateau*/
 
 public :
@@ -63,9 +66,9 @@ public :
 	void setValSup(int);
 
 	/*!
-	* \brief Permet d'accéder aux dominos posés sur le plateau
+	* \brief Permet de récupérer la liste de dominos du plateau
 	*
-	* \return le vecteur de dominos du plateau
+	* \return liste de dominos
 	*/
 	vector<Domino>* getDominosPlateau();
 
@@ -78,6 +81,8 @@ public :
 
 	/*!
 	* \brief Permet de poser un domino au début du vecteur de dominos du plateau
+	*
+	* Se positionne au début du vecteur de domino et y insére le domino à ajouter
 	*
 	* \param domino à poser
 	*/
@@ -95,6 +100,8 @@ public :
 	* \brief Vérifie qu'il est possible de poser le domino choisi suivant le côté choisi
 	*
 	* \param côté du domino avec lequel on fait la jonction
+	*
+	* \return vrai si le domino est compatible, faux sinon
 	*/
 	bool verifierCompatibilite(int);
 

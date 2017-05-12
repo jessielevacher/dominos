@@ -13,7 +13,7 @@
 /*!
  * \file JoueurDomino.cpp
  * \brief Joueur domino
- * \author {Léa Manneheut, Laëtitia Guillard}
+ * \author {LÃ©a Manneheut, LaÃ«titia Guillard}
  */
 
 using namespace std;
@@ -33,7 +33,7 @@ JoueurDomino::JoueurDomino(){
 }
 
 /*!
- * \brief Permet d'accéder au pseudo du joueur
+ * \brief Permet d'accÃ©der au pseudo du joueur
  *
  * \return le pseudo du joueur
  */
@@ -64,9 +64,9 @@ bool JoueurDomino::getMain() {
 /*!
  * \brief Permet de modifier la main du joueur
  *
- * La main du joueur correspond au moment où il joue : elle vaut vrai si c'est au joueur de jouer, faux sinon.
+ * La main du joueur correspond au moment oÃ¹ il joue : elle vaut vrai si c'est au joueur de jouer, faux sinon.
  *
- * \param booléen
+ * \param boolÃ©en
  *
  */
 void JoueurDomino::setMain(bool m) {
@@ -94,7 +94,7 @@ void JoueurDomino::setNbDominosRestants(int n) {
 }
 
 /*!
- * \brief Permet de savoir si le joueur a gagné
+ * \brief Permet de savoir si le joueur a gagnÃ©
  *
  * \return vrai si le joueur a gagne, faux sinon
  *
@@ -106,9 +106,9 @@ bool JoueurDomino::getGagne() {
 /*!
  * \brief Permet de modifier la "gagne" du joueur
  *
- * La "gagne" apparait seulement à la fin du jeu pour savoir qui a gagné
+ * La "gagne" apparait seulement Ã  la fin du jeu pour savoir qui a gagnÃ©
  *
- * \param booléen qui vaut vrai si le joueur gagne, faux sinon
+ * \param boolÃ©en qui vaut vrai si le joueur gagne, faux sinon
  *
  */
 void JoueurDomino::setGagne(bool g) {
@@ -128,7 +128,7 @@ vector<Domino>* JoueurDomino::getListeDominos(){
 /*!
  * \brief Permet d'ajouter un domino en fin de liste des dominos du joueur
  *
- * \param le domino à ajouter dans la liste
+ * \param le domino Ã  ajouter dans la liste
  *
  */
 void JoueurDomino::setBackListeDominos(const Domino d){
@@ -139,12 +139,12 @@ void JoueurDomino::setBackListeDominos(const Domino d){
 /*!
  * \brief Permet de modifier le pseudo du joueur
  *
- * La modification du pseudo se fait après avoir demandé au joueur d'entrée son pseudo au clavier
+ * La modification du pseudo se fait aprÃ¨s avoir demandÃ© au joueur d'entrer son pseudo au clavier
  *
  */
 void JoueurDomino::saisirPseudo() {
 	string id;
-	cout << "Vous avez décidé de jouer, entrez votre pseudo :" << endl;
+	cout << "Vous avez dÃ©cidÃ© de jouer, entrez votre pseudo :" << endl;
 	cin >> id;
 	setPseudo(id);
 }
@@ -170,7 +170,7 @@ void JoueurDomino::distribuerDominos(Pioche p){
 /*!
  * \brief Permet de poser sur le plateau un domino
  *
- * Après avoir demandé au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute à la liste des dominos du plateau
+ * AprÃ¨s avoir demandÃ© au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute Ã  la liste des dominos du plateau
  *
  * \param le plateau de jeu et la pioche
  *
@@ -179,12 +179,12 @@ void JoueurDomino::distribuerDominos(Pioche p){
  */
 Plateau JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 	int vi, vs, jonc;
-	cout << "Quel domino souhaiter vous poser ?" << endl;
+	cout << "Quel domino souhaitez-vous poser ?" << endl;
 	cout << "ValInf : ";
 	cin >> vi;
 	cout << "ValSup : ";
 	cin >> vs;
-	cout << "Coté pour la jonction :";
+	cout << "CÃ´tÃ© pour la jonction :";
 	cin >> jonc;
 
 	Domino dominoChanger(vi, vs);
@@ -210,11 +210,11 @@ Plateau JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
 }
 
 /*!
- * \brief Permet de vérifier que le domino à poser fait bien partie de la liste des dominos du joueur
+ * \brief Permet de vÃ©rifier que le domino Ã  poser fait bien partie de la liste des dominos du joueur
  *
- * On regarde si dans la liste des dominos du joueur, le domino à poser en fait partie
+ * On regarde si dans la liste des dominos du joueur, le domino Ã  poser en fait partie
  *
- * \param le domino à poser sur le plateau
+ * \param le domino Ã  poser sur le plateau
  *
  * \return vrai si le domino fait partie de la liste des dominos du joueur, faux sinon
  *
@@ -231,12 +231,12 @@ bool JoueurDomino::verifierDominoMain(Domino d){
 }
 
 /*!
- * \brief Permet de retirer le domino à poser de la liste des dominos du joueur
+ * \brief Permet de retirer le domino Ã  poser de la liste des dominos du joueur
  *
- * Commence par chercher le domino à poser dans la liste des dominos du joueur, puis le supprime.
- * Met à jour le nombre de dominos restants du joueur
+ * Commence par chercher le domino Ã  poser dans la liste des dominos du joueur, puis le supprime.
+ * Met Ã  jour le nombre de dominos restants du joueur
  *
- * \param le domino à retirer de la liste des dominos du joueur
+ * \param le domino Ã  retirer de la liste des dominos du joueur
  *
  */
 void JoueurDomino::retirerDominoMain(Domino d){
@@ -269,9 +269,9 @@ void JoueurDomino::piocher(Pioche p){
 /*!
  * \brief Permet d'ajouter un domino dans la liste des dominos du joueur
  *
- * Ajoute le domino à la liste des dominos du joueur et met à jour le nombre de dominos restants
+ * Ajoute le domino Ã  la liste des dominos du joueur et met Ã  jour le nombre de dominos restants
  *
- * \param le domino à ajouter
+ * \param le domino Ã  ajouter
  *
  */
 void JoueurDomino::ajouterDominoMain(Domino d){
@@ -300,9 +300,9 @@ bool JoueurDomino::doubleExiste(){
 }
 
 /*!
- * \brief Permet de choisir le plus grand double présent dans la liste des dominos du joueur
+ * \brief Permet de choisir le plus grand double prÃ©sent dans la liste des dominos du joueur
  *
- * \return le plus grand double présent dans la liste des dominos du joueur
+ * \return le plus grand double prÃ©sent dans la liste des dominos du joueur
  *
  */
 Domino JoueurDomino::plusGrandDouble(){
@@ -320,7 +320,7 @@ Domino JoueurDomino::plusGrandDouble(){
 }
 
 /*!
- * \brief Permet d'afficher les dominos présents dans la liste des dominos du joueur
+ * \brief Permet d'afficher les dominos prÃ©sents dans la liste des dominos du joueur
  *
  */
 void JoueurDomino::afficherMain()

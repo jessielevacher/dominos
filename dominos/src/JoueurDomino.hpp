@@ -48,7 +48,7 @@ public :
 	JoueurDomino();
 
 	/*!
-	 * \brief Permet d'acc�der au pseudo du joueur
+	 * \brief Permet d'accéder au pseudo du joueur
 	 *
 	 * \return le pseudo du joueur
 	 */
@@ -73,9 +73,9 @@ public :
 	/*!
 	 * \brief Permet de modifier la main du joueur
 	 *
-	 * La main du joueur correspond au moment o� il joue : elle vaut vrai si c'est au joueur de jouer, faux sinon.
+	 * La main du joueur correspond au moment où il joue : elle vaut vrai si c'est au joueur de jouer, faux sinon.
 	 *
-	 * \param bool�en
+	 * \param booléen
 	 *
 	 */
 	void setMain(bool);
@@ -97,7 +97,7 @@ public :
 	void setNbDominosRestants(int);
 
 	/*!
-	 * \brief Permet de savoir si le joueur a gagn�
+	 * \brief Permet de savoir si le joueur a gagné
 	 *
 	 * \return vrai si le joueur a gagne, faux sinon
 	 *
@@ -107,9 +107,9 @@ public :
 	/*!
 	 * \brief Permet de modifier la "gagne" du joueur
 	 *
-	 * La "gagne" apparait seulement � la fin du jeu pour savoir qui a gagn�
+	 * La "gagne" apparait seulement à la fin du jeu pour savoir qui a gagné
 	 *
-	 * \param bool�en qui vaut vrai si le joueur gagne, faux sinon
+	 * \param booléen qui vaut vrai si le joueur gagne, faux sinon
 	 *
 	 */
 	void setGagne(bool);
@@ -125,7 +125,7 @@ public :
 	/*!
 	 * \brief Permet d'ajouter un domino en fin de liste des dominos du joueur
 	 *
-	 * \param le domino � ajouter dans la liste
+	 * \param le domino à ajouter dans la liste
 	 *
 	 */
 	void setBackListeDominos(const Domino);
@@ -133,7 +133,7 @@ public :
 	/*!
 	 * \brief Permet de modifier le pseudo du joueur
 	 *
-	 * La modification du pseudo se fait apr�s avoir demand� au joueur d'entr�e son pseudo au clavier
+	 * La modification du pseudo se fait aprés avoir demandé au joueur d'entrer son pseudo au clavier
 	 *
 	 */
 	void saisirPseudo();
@@ -151,7 +151,7 @@ public :
 	/*!
 	 * \brief Permet de poser sur le plateau un domino
 	 *
-	 * Apr�s avoir demand� au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute � la liste des dominos du plateau
+	 * Après avoir demandé au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute � la liste des dominos du plateau
 	 *
 	 * \param le plateau de jeu et la pioche
 	 *
@@ -161,12 +161,12 @@ public :
 	Plateau deposerDomino(Plateau, Pioche);
 
 	/*!
-	 * \brief Permet de retirer le domino � poser de la liste des dominos du joueur
+	 * \brief Permet de retirer le domino à poser de la liste des dominos du joueur
 	 *
-	 * Commence par chercher le domino � poser dans la liste des dominos du joueur, puis le supprime.
-	 * Met � jour le nombre de dominos restants du joueur
+	 * Commence par chercher le domino à poser dans la liste des dominos du joueur, puis le supprime.
+	 * Met à jour le nombre de dominos restants du joueur
 	 *
-	 * \param le domino � retirer de la liste des dominos du joueur
+	 * \param le domino à retirer de la liste des dominos du joueur
 	 *
 	 */
 	void retirerDominoMain(Domino);
@@ -184,19 +184,19 @@ public :
 	/*!
 	 * \brief Permet d'ajouter un domino dans la liste des dominos du joueur
 	 *
-	 * Ajoute le domino � la liste des dominos du joueur et met � jour le nombre de dominos restants
+	 * Ajoute le domino à la liste des dominos du joueur et met à jour le nombre de dominos restants
 	 *
-	 * \param le domino � ajouter
+	 * \param le domino à ajouter
 	 *
 	 */
 	void ajouterDominoMain(Domino);
 
 	/*!
-	 * \brief Permet de v�rifier que le domino � poser fait bien partie de la liste des dominos du joueur
+	 * \brief Permet de vérifier que le domino à poser fait bien partie de la liste des dominos du joueur
 	 *
-	 * On regarde si dans la liste des dominos du joueur, le domino � poser en fait partie
+	 * On regarde si dans la liste des dominos du joueur, le domino à poser en fait partie
 	 *
-	 * \param le domino � poser sur le plateau
+	 * \param le domino à poser sur le plateau
 	 *
 	 * \return vrai si le domino fait partie de la liste des dominos du joueur, faux sinon
 	 *
@@ -212,15 +212,15 @@ public :
 	bool doubleExiste();
 
 	/*!
-	 * \brief Permet de choisir le plus grand double pr�sent dans la liste des dominos du joueur
+	 * \brief Permet de choisir le plus grand double présent dans la liste des dominos du joueur
 	 *
-	 * \return le plus grand double pr�sent dans la liste des dominos du joueur
+	 * \return le plus grand double présent dans la liste des dominos du joueur
 	 *
 	 */
 	Domino plusGrandDouble();
 
 	/*!
-	 * \brief Permet d'afficher les dominos pr�sents dans la liste des dominos du joueur
+	 * \brief Permet d'afficher les dominos présents dans la liste des dominos du joueur
 	 *
 	 */
 	void afficherMain();

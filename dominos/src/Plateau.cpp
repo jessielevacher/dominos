@@ -9,14 +9,6 @@
 #include "Plateau.hpp"
 #include <vector>
 
-
-/*Plateau::Plateau(Domino dom){
-	valInf=dom.getValInf();
-	valSup=dom.getValSup();
-	dominosPlateau=new vector<Domino>();
-	dominosPlateau->at(0)=dom;
-}*/
-
 /*!
 *  \brief Constructeur
 *
@@ -27,7 +19,6 @@ Plateau::Plateau(){
 	valInf=NULL;
 	valSup=NULL;
 	dominosPlateau=new vector<Domino>();
-
 }
 
 /*!
@@ -67,9 +58,9 @@ void Plateau::setValSup(int vS){
 }
 
 /*!
-* \brief Permet de poser un domino à la fin du vecteur de dominos du plateau
+* \brief Permet de récupérer la liste de dominos du plateau
 *
-* \param domino à poser
+* \return liste de dominos
 */
 vector<Domino>* Plateau::getDominosPlateau(){
 	return dominosPlateau;
@@ -88,7 +79,7 @@ void Plateau::setBackDominosPlateau(const Domino d){
 /*!
 * \brief Permet de poser un domino au début du vecteur de dominos du plateau
 *
-*Se positionne au début du vecteur de domino et y insére le domino à ajouter
+* Se positionne au début du vecteur de domino et y insére le domino à ajouter
 *
 * \param domino à poser
 */
@@ -118,7 +109,7 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 		if (jonction == d.getValInf())
 			setValSup(d.getValSup());
 		else setValSup(d.getValInf());
-		//on ajouter le domino a� la fin du plateau
+		//on ajouter le domino à la fin du plateau
 		setBackDominosPlateau(d);
 	}
 }
@@ -127,8 +118,10 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 * \brief Vérifie qu'il est possible de poser le domino choisi suivant le côté choisi
 *
 * \param côté du domino avec lequel on fait la jonction
+*
+* \return vrai si le domino est compatible, faux sinon
 */
-bool Plateau::verifierCompatibilite(int jonction){//v�rifie que la jonction choisie par le joueur est bien compatible avec le plateau actuel
+bool Plateau::verifierCompatibilite(int jonction){//vérifie que la jonction choisie par le joueur est bien compatible avec le plateau actuel
 
 		if (jonction == getValInf())
 			return true;
@@ -140,18 +133,19 @@ bool Plateau::verifierCompatibilite(int jonction){//v�rifie que la jonction ch
 
 /*!
 * \brief Affiche les dominos du plateau sur la console
-*
-* On parcourt le vecteur de dominos en comparant les dominos deux à deux.
-* Si la jonction se fait entre la valeur supérieure du premier domino et la valeur inférieure du deuxieme domino, alors on
-* passe aux dominos suivants. Sinon si la jonction se fait entre la valeur supérieure du premier domino et la valeur supérieure
-* du deuxieme domino, alors on permute les valeurs inférieure et supérieure du deuxieme domino. Sinon si la jonction se fait
-* entre la valeur inférieure du premier domino et la valeur inférieure du deuxieme domino, alors on permutte les valeurs inférieure
-* et supérieure du premier domino. Sinon, si la jonction se fait entre la valeur inférieure du premier domino et la valeur
-* supérieure du deuxieme domino, on permutte les valeurs inférieure et supérieure des deux dominos.
-* Après parcours, on affiche le vecteur de dominos.
-*
 */
 void Plateau::afficherPlateau(){
+	/*On parcourt le vecteur de dominos en comparant les dominos deux à deux.
+	Si la jonction se fait entre la valeur supérieure du premier domino et la valeur inférieure du deuxieme domino, alors on
+	passe aux dominos suivants. Sinon si la jonction se fait entre la valeur supérieure du premier domino et la valeur supérieure
+	du deuxieme domino, alors on permute les valeurs inférieure et supérieure du deuxieme domino. Sinon si la jonction se fait
+	entre la valeur inférieure du premier domino et la valeur inférieure du deuxieme domino, alors on permutte les valeurs inférieure
+	et supérieure du premier domino. Sinon, si la jonction se fait entre la valeur inférieure du premier domino et la valeur
+	supérieure du deuxieme domino, on permutte les valeurs inférieure et supérieure des deux dominos.
+	Après parcours, on affiche le vecteur de dominos.*/
+
+
+
 	//On va afficher les dominos 2 à 2 en comparant les val inf et les val sup pour ordonner le vecteur de dominos du plateau
 
 	vector<Domino>* temp;
