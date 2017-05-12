@@ -39,8 +39,8 @@ class JeuDomino{
 		JoueurDomino joueur; /*!< Joueur*/
 		JoueurDomino jOrdi; /*!< Ordinateur*/
 		JoueurDomino main; /*!< Symbolise le joueur ayant la main*/
-		Pioche pioche; /*!< Pioche du jeu*/
-		Plateau plateau; /*!< Plateau du jeu*/
+		Pioche pioche; /*!< pioche du jeu*/
+		Plateau plateau; /*!< plateau du jeu*/
 
 
 	public:
@@ -78,10 +78,10 @@ class JeuDomino{
 		/*!
 		 * \brief Détermination du joueur ayant le plus grand double
 		 *
-		 * \param Le joueur 1
-		 * \param Le plus grand double du joueur 1
-		 * \param Le joueur 2
-		 * \param Le plus grand double du joueur 2
+		 * \param j1 : le joueur 1
+		 * \param d1 : le plus grand double du joueur 1
+		 * \param j2 : le joueur 2
+		 * \param d2 : le plus grand double du joueur 2
 		 *
 		 * \return le joueur ayant le plus grand double
 		 */

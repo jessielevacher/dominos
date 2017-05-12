@@ -8,6 +8,12 @@
 #ifndef PLATEAU_HPP_
 #define PLATEAU_HPP_
 
+/*!
+ * \file Plateau.hpp
+ * \brief Plateau
+ * \author {Léa Manneheut, Marème Thiam}
+ */
+
 #include <vector>
 #include <string>
 #include "Domino.hpp"
@@ -47,7 +53,7 @@ public :
 	/*!
 	* \brief Permet de modifier à la valeur inférieure du plateau
 	*
-	* \param nouvelle valeur inférieure du plateau
+	* \param vI : nouvelle valeur inférieure du plateau
 	*/
 	void setValInf(int);
 
@@ -61,7 +67,7 @@ public :
 	/*!
 	* \brief Permet de modifier à la valeur supérieure du plateau
 	*
-	* \param nouvelle valeur supérieure du plateau
+	* \param vS : nouvelle valeur supérieure du plateau
 	*/
 	void setValSup(int);
 
@@ -75,7 +81,7 @@ public :
 	/*!
 	* \brief Permet de poser un domino à la fin du vecteur de dominos du plateau
 	*
-	* \param domino à poser
+	* \param d : domino à poser
 	*/
 	void setBackDominosPlateau(const Domino);
 
@@ -84,22 +90,22 @@ public :
 	*
 	* Se positionne au début du vecteur de domino et y insére le domino à ajouter
 	*
-	* \param domino à poser
+	* \param d : domino à poser
 	*/
 	void setBeginDominosPlateau(const Domino);
 
 	/*!
 	* \brief Permet d'ajouter un domino sur le plateau en faisant la jonction avec un côté du domino
 	*
-	* \param domino à poser
-	* \param côté du domino que l'on veut poser
+	* \param d : domino à poser
+	* \param jonction : côté du domino que l'on veut poser
 	*/
 	void ajouterDominoPlateau(Domino, int);
 
 	/*!
 	* \brief Vérifie qu'il est possible de poser le domino choisi suivant le côté choisi
 	*
-	* \param côté du domino avec lequel on fait la jonction
+	* \param jonction : côté du domino avec lequel on fait la jonction
 	*
 	* \return vrai si le domino est compatible, faux sinon
 	*/

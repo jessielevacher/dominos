@@ -5,8 +5,8 @@
  *      Author: jlevacher
  */
 
-#include "Domino.hpp"
-#include <vector>
+#ifndef SRC_PIOCHE_HPP_
+#define SRC_PIOCHE_HPP_
 
 /*!
  * \file Pioche.hpp
@@ -14,8 +14,8 @@
  * \author {Jessie Levacher, Léa Manneheut}
  */
 
-#ifndef SRC_PIOCHE_HPP_
-#define SRC_PIOCHE_HPP_
+#include "Domino.hpp"
+#include <vector>
 
 using namespace std;
 
@@ -51,7 +51,7 @@ public:
 	/*!
 	 * \brief Permet de modifier le nombre de dominos présent dans la pioche
 	 *
-	 * \param nouvelle quantité de dominos
+	 * \param nb : nouvelle quantité de dominos
 	 */
 	void setNbDominos(int);
 

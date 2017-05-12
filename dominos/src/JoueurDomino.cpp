@@ -5,16 +5,16 @@
  *      Author: lguillard
  */
 
-#include "JoueurDomino.hpp"
-#include "Pioche.hpp"
-#include "Domino.hpp"
-#include "Plateau.hpp"
-
 /*!
  * \file JoueurDomino.cpp
  * \brief Joueur domino
  * \author {Léa Manneheut, Laëtitia Guillard}
  */
+
+#include "JoueurDomino.hpp"
+#include "Pioche.hpp"
+#include "Domino.hpp"
+#include "Plateau.hpp"
 
 using namespace std;
 
@@ -44,7 +44,7 @@ string JoueurDomino::getPseudo() {
 /*!
  * \brief Permet de modifier le pseudo du joueur
  *
- * \param pseudo du joueur
+ * \param p : pseudo du joueur
  *
  */
 void JoueurDomino::setPseudo(string p) {
@@ -66,7 +66,7 @@ bool JoueurDomino::getMain() {
  *
  * La main du joueur correspond au moment où il joue : elle vaut vrai si c'est au joueur de jouer, faux sinon.
  *
- * \param booléen
+ * \param m : booléen
  *
  */
 void JoueurDomino::setMain(bool m) {
@@ -86,7 +86,7 @@ int JoueurDomino::getNbDominosRestants() {
 /*!
  * \brief Permet de modifier le nombre de dominos restants du joueur
  *
- * \param le nouveau nombre de dominos restants
+ * \param n : le nouveau nombre de dominos restants
  *
  */
 void JoueurDomino::setNbDominosRestants(int n) {
@@ -108,7 +108,7 @@ bool JoueurDomino::getGagne() {
  *
  * La "gagne" apparait seulement à la fin du jeu pour savoir qui a gagné
  *
- * \param booléen qui vaut vrai si le joueur gagne, faux sinon
+ * \param g : booléen qui vaut vrai si le joueur gagne, faux sinon
  *
  */
 void JoueurDomino::setGagne(bool g) {
@@ -128,7 +128,7 @@ vector<Domino>* JoueurDomino::getListeDominos(){
 /*!
  * \brief Permet d'ajouter un domino en fin de liste des dominos du joueur
  *
- * \param le domino à ajouter dans la liste
+ * \param d : le domino à ajouter dans la liste
  *
  */
 void JoueurDomino::setBackListeDominos(const Domino d){
@@ -154,7 +154,7 @@ void JoueurDomino::saisirPseudo() {
  *
  * On retire 7 dominos de la pioche pour les ajouter dans la liste des dominos du joueur
  *
- * \param la pioche du jeu
+ * \param p : la pioche du jeu
  *
  */
 void JoueurDomino::distribuerDominos(Pioche p){
@@ -172,7 +172,8 @@ void JoueurDomino::distribuerDominos(Pioche p){
  *
  * Après avoir demandé au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute à la liste des dominos du plateau
  *
- * \param le plateau de jeu et la pioche
+ * \param plat : le plateau de jeu
+ * \param p : la pioche
  *
  * \return le plateau avec le nouveau domino
  *
@@ -214,7 +215,7 @@ Plateau JoueurDomino::deposerDomino(Plateau plat, Pioche p) {
  *
  * On regarde si dans la liste des dominos du joueur, le domino à poser en fait partie
  *
- * \param le domino à poser sur le plateau
+ * \param d : le domino à poser sur le plateau
  *
  * \return vrai si le domino fait partie de la liste des dominos du joueur, faux sinon
  *
@@ -236,7 +237,7 @@ bool JoueurDomino::verifierDominoMain(Domino d){
  * Commence par chercher le domino à poser dans la liste des dominos du joueur, puis le supprime.
  * Met à jour le nombre de dominos restants du joueur
  *
- * \param le domino à retirer de la liste des dominos du joueur
+ * \param d : le domino à retirer de la liste des dominos du joueur
  *
  */
 void JoueurDomino::retirerDominoMain(Domino d){
@@ -257,7 +258,7 @@ void JoueurDomino::retirerDominoMain(Domino d){
  *
  * Commence par retirer le domino de la pioche puis l'ajoute dans la liste des dominos du joueur
  *
- * \param la pioche du jeu
+ * \param p : la pioche du jeu
  *
  */
 void JoueurDomino::piocher(Pioche p){
@@ -271,7 +272,7 @@ void JoueurDomino::piocher(Pioche p){
  *
  * Ajoute le domino à la liste des dominos du joueur et met à jour le nombre de dominos restants
  *
- * \param le domino à ajouter
+ * \param d : le domino à ajouter
  *
  */
 void JoueurDomino::ajouterDominoMain(Domino d){

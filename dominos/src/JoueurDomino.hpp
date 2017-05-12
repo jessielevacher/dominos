@@ -5,14 +5,14 @@
  *      Author: lguillard
  */
 
-/*!
- * \file Pioche.hpp
- * \brief Joueur du jeu Domino
- * \author {Laetitia Guillard, Léa Manneheut}
- */
-
 #ifndef SRC_JOUEURDOMINO_HPP_
 #define SRC_JOUEURDOMINO_HPP_
+
+/*!
+ * \file JoueurDomino.hpp
+ * \brief Joueur du jeu domino
+ * \author {Laetitia Guillard, Léa Manneheut}
+ */
 
 #include <string>
 #include <vector>
@@ -24,7 +24,7 @@ using namespace std;
 
 /*!
  * \class JoueurDomino
- * \brief Classe représentant les joueurs du jeu Domino
+ * \brief Classe représentant les joueurs du jeu domino
  *
  *  La classe gère les joueurs du jeu Domino
  */
@@ -57,7 +57,7 @@ public :
 	/*!
 	 * \brief Permet de modifier le pseudo du joueur
 	 *
-	 * \param pseudo du joueur
+	 * \param p : pseudo du joueur
 	 *
 	 */
 	void setPseudo(string);
@@ -83,7 +83,7 @@ public :
 	/*!
 	 * \brief Permet de donner le nombre de dominos restants du joueur
 	 *
-	 * \return le nombre de dominos restants dans la liste des dominos du joueur
+	 * \return m : le nombre de dominos restants dans la liste des dominos du joueur
 	 *
 	 */
 	int getNbDominosRestants();
@@ -91,7 +91,7 @@ public :
 	/*!
 	 * \brief Permet de modifier le nombre de dominos restants du joueur
 	 *
-	 * \param le nouveau nombre de dominos restants
+	 * \param n : le nouveau nombre de dominos restants
 	 *
 	 */
 	void setNbDominosRestants(int);
@@ -109,7 +109,7 @@ public :
 	 *
 	 * La "gagne" apparait seulement à la fin du jeu pour savoir qui a gagné
 	 *
-	 * \param booléen qui vaut vrai si le joueur gagne, faux sinon
+	 * \param g : booléen qui vaut vrai si le joueur gagne, faux sinon
 	 *
 	 */
 	void setGagne(bool);
@@ -125,7 +125,7 @@ public :
 	/*!
 	 * \brief Permet d'ajouter un domino en fin de liste des dominos du joueur
 	 *
-	 * \param le domino à ajouter dans la liste
+	 * \param d : le domino à ajouter dans la liste
 	 *
 	 */
 	void setBackListeDominos(const Domino);
@@ -143,7 +143,7 @@ public :
 	 *
 	 * On retire 7 dominos de la pioche pour les ajouter dans la liste des dominos du joueur
 	 *
-	 * \param la pioche du jeu
+	 * \param p : la pioche du jeu
 	 *
 	 */
 	void distribuerDominos(Pioche);
@@ -153,7 +153,8 @@ public :
 	 *
 	 * Après avoir demandé au joueur quel domino il voulait poser, on retire le domino de la liste des dominos du joueur et on l'ajoute � la liste des dominos du plateau
 	 *
-	 * \param le plateau de jeu et la pioche
+	 * \param plat : le plateau de jeu
+	 * \param p : la pioche
 	 *
 	 * \return le plateau avec le nouveau domino
 	 *
@@ -166,7 +167,7 @@ public :
 	 * Commence par chercher le domino à poser dans la liste des dominos du joueur, puis le supprime.
 	 * Met à jour le nombre de dominos restants du joueur
 	 *
-	 * \param le domino à retirer de la liste des dominos du joueur
+	 * \param d : le domino à retirer de la liste des dominos du joueur
 	 *
 	 */
 	void retirerDominoMain(Domino);
@@ -176,7 +177,7 @@ public :
 	 *
 	 * Commence par retirer le domino de la pioche puis l'ajoute dans la liste des dominos du joueur
 	 *
-	 * \param la pioche du jeu
+	 * \param p : la pioche du jeu
 	 *
 	 */
 	void piocher(Pioche);
@@ -186,7 +187,7 @@ public :
 	 *
 	 * Ajoute le domino à la liste des dominos du joueur et met à jour le nombre de dominos restants
 	 *
-	 * \param le domino à ajouter
+	 * \param d : le domino à ajouter
 	 *
 	 */
 	void ajouterDominoMain(Domino);

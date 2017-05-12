@@ -19,8 +19,8 @@
 *
 *  Constructeur de la classe Domino
 *
-*  \param Valeur inférieure présente sur le domino
-*  \param Valeur supérieure présente sur le domino
+*  \param vI : Valeur inférieure présente sur le domino
+*  \param vS : Valeur supérieure présente sur le domino
 *
 */
 Domino::Domino(const int vI,const int vS){ //constructeur
@@ -42,7 +42,7 @@ int Domino::getValInf() const{
 /*!
  * \brief Permet de modifier la valeur inférieure du domino
  *
- * \param nouvelle valeur inférieure du domino
+ * \param vI : nouvelle valeur inférieure du domino
  */
 void Domino::setValInf(const int vI) {
 	valInf=vI;
@@ -60,7 +60,7 @@ int Domino::getValSup() const{
 /*!
  * \brief Permet de modifier la valeur supérieure du domino
  *
- * \param nouvelle valeur supérieure du domino
+ * \param vS : nouvelle valeur supérieure du domino
  */
 void Domino::setValSup(const int vS) {
 	valSup=vS;

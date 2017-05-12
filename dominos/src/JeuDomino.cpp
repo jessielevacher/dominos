@@ -182,10 +182,10 @@ void JeuDomino::attribuerMain(){//On attribut la main au premier tour à l'un de
 /*!
  * \brief Détermination du joueur ayant le plus grand double
  *
- * \param Le joueur 1
- * \param Le plus grand double du joueur 1
- * \param Le joueur 2
- * \param Le plus grand double du joueur 2
+ * \param j1 : le joueur 1
+ * \param d1 : le plus grand double du joueur 1
+ * \param j2 : le joueur 2
+ * \param d2 : le plus grand double du joueur 2
  *
  * \return le joueur ayant le plus grand double
  */

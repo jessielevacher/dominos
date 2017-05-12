@@ -52,7 +52,7 @@ int Pioche::getNbDominos(){
 /*!
  * \brief Permet de modifier le nombre de dominos présent dans la pioche
  *
- * \param nouvelle quantité de dominos
+ * \param nb : nouvelle quantité de dominos
  */
 void Pioche::setNbDominos(int nb){
 	nbDominos = nb;

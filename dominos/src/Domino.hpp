@@ -36,14 +36,14 @@ class Domino{
 
 	public:
 		/*!
-		 *  \brief Constructeur
-		 *
-		 *  Constructeur de la classe Domino
-		 *
-		 *  \param Valeur inférieure présente sur le domino
-		 *  \param Valeur supérieure présente sur le domino
-		 *
-		 */
+		*  \brief Constructeur
+		*
+		*  Constructeur de la classe Domino
+		*
+		*  \param vI : Valeur inférieure présente sur le domino
+		*  \param vS : Valeur supérieure présente sur le domino
+		*
+		*/
 		Domino(const int,const int); //const = le paramètre du constructeur ne sera pas modifié
 
 		/*!
@@ -56,7 +56,7 @@ class Domino{
 		/*!
 		 * \brief Permet de modifier la valeur inférieure du domino
 		 *
-		 * \param nouvelle valeur inférieure du domino
+		 * \param vI : nouvelle valeur inférieure du domino
 		 */
 		void setValInf(const int);
 
@@ -70,7 +70,7 @@ class Domino{
 		/*!
 		 * \brief Permet de modifier la valeur supérieure du domino
 		 *
-		 * \param nouvelle valeur supérieure du domino
+		 * \param vS : nouvelle valeur supérieure du domino
 		 */
 		void setValSup(const int);
 

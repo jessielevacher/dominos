@@ -5,6 +5,11 @@
  *      Author: {Mareme}
  */
 
+/*!
+ * \file Plateau.cpp
+ * \brief Plateau
+ * \author {Léa Manneheut, Marème Thiam}
+ */
 
 #include "Plateau.hpp"
 #include <vector>
@@ -24,7 +29,7 @@ Plateau::Plateau(){
 /*!
 * \brief Permet de modifier à la valeur inférieure du plateau
 *
-* \param nouvelle valeur inférieure du plateau
+* \param vI : nouvelle valeur inférieure du plateau
 */
 void Plateau::setValInf(int vI){
 	valInf=vI;
@@ -51,7 +56,7 @@ int Plateau::getValSup(){
 /*!
 * \brief Permet de modifier à la valeur supérieure du plateau
 *
-* \param nouvelle valeur supérieure du plateau
+* \param vS : nouvelle valeur supérieure du plateau
 */
 void Plateau::setValSup(int vS){
 	valSup=vS;
@@ -69,7 +74,7 @@ vector<Domino>* Plateau::getDominosPlateau(){
 /*!
 * \brief Permet de poser un domino à la fin du vecteur de dominos du plateau
 *
-* \param domino à poser
+* \param d : domino à poser
 */
 void Plateau::setBackDominosPlateau(const Domino d){
 	 dominosPlateau->push_back(d);
@@ -81,7 +86,7 @@ void Plateau::setBackDominosPlateau(const Domino d){
 *
 * Se positionne au début du vecteur de domino et y insére le domino à ajouter
 *
-* \param domino à poser
+* \param d : domino à poser
 */
 void Plateau::setBeginDominosPlateau(const Domino d){
 	vector<Domino>::iterator iterator = dominosPlateau->begin();
@@ -93,8 +98,8 @@ void Plateau::setBeginDominosPlateau(const Domino d){
 /*!
 * \brief Permet d'ajouter un domino sur le plateau en faisant la jonction avec un côté du domino
 *
-* \param domino à poser
-* \param côté du domino que l'on veut poser
+* \param d : domino à poser
+* \param jonction : côté du domino que l'on veut poser
 */
 void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 	//on regarde si la jonction est avec la valInf du plateau
@@ -117,7 +122,7 @@ void Plateau::ajouterDominoPlateau(Domino d, int jonction){
 /*!
 * \brief Vérifie qu'il est possible de poser le domino choisi suivant le côté choisi
 *
-* \param côté du domino avec lequel on fait la jonction
+* \param jonction : côté du domino avec lequel on fait la jonction
 *
 * \return vrai si le domino est compatible, faux sinon
 */
