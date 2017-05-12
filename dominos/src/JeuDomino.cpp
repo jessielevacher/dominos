@@ -319,7 +319,10 @@ void JeuDomino::affichageEcranJoueur(){ //Affichage ecran lorsque c'est au tour 
 		cout << " Il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
 		}
 	//On affiche le plateau du jeu mis à jour
+	cout << "----------------------"<< endl;
 	plateau.afficherPlateau();
+	cout <<  endl;
+	cout << "----------------------"<< endl;
 	cout <<  endl;
 	cout <<  endl;
 	//Ainsi que les dominos restants dans la main du joueur
@@ -351,7 +354,10 @@ void JeuDomino::affichageEcranOrdi(){ //Affichage ecran lorsque c'est au tour de
 			cout << " Il reste " << pioche.getNbDominos() << " dominos dans la pioche " << endl;
 			}
 	//On affiche le plateau du jeu mis à jour
+		cout << "----------------------"<< endl;
 		plateau.afficherPlateau();
+		cout <<  endl;
+		cout << "----------------------"<< endl;
 		cout <<  endl;
 		cout << " Votre adversaire est en train de jouer.. " << endl;
 	//On n'affiche pas sa main car le joueur (qui est son adversaire) ne doit pas la voir
