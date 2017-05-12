@@ -24,7 +24,6 @@ void testAffichageDomino()
 }
 
 
-
 void testafficherPlateau(){
 			//On crée un plateau
 			Plateau plateau;
@@ -53,10 +52,9 @@ void testafficherPlateau(){
 			plateau.afficherPlateau();
 
 }
-/*
-int main(){
-	testAffichageDomino();
-	//testafficherPlateau();
 
+/*int main(){
+	//testAffichageDomino();
+	testafficherPlateau();
 }
 */

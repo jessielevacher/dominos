@@ -27,4 +27,3 @@ int main()
 	jeu.finJeu();
 }
 
-
