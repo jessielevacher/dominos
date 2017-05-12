@@ -10,7 +10,7 @@
 using namespace std;
 
 
-void testSortieDomino()
+void testAffichageDomino()
 {
 	Domino d(2,1);
 	Domino a(1,2);
@@ -23,33 +23,6 @@ void testSortieDomino()
 	cout << "val sup de a(1,2) "<< a.getValSup()<< endl;
 }
 
-
-void testAfficherDomino(){
-
-	Plateau plateau;
-
-
-		Domino i(6,6);
-		Domino d(6,1);
-		Domino a(2,1);
-		Domino b(2,4);
-		Domino e(1,6);
-		Domino c(4,1);
-
-		plateau.setBackDominosPlateau(i);
-		plateau.setValInf(6);
-		plateau.setValSup(6);
-
-
-		plateau.setBeginDominosPlateau(d);
-		plateau.setBeginDominosPlateau(a);
-		plateau.setBeginDominosPlateau(b);
-		plateau.setBackDominosPlateau(e);
-		plateau.setBackDominosPlateau(c);
-
-		cout <<"Le plateau :"<< endl;
-
-}
 
 
 void testafficherPlateau(){
@@ -80,9 +53,10 @@ void testafficherPlateau(){
 			plateau.afficherPlateau();
 
 }
-
-/*int main(){
-	//testSortieDomino();
-	//cout<<"\n \n"<<endl;
+/*
+int main(){
+	testAffichageDomino();
 	//testafficherPlateau();
-}*/
+
+}
+*/
