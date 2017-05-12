@@ -16,7 +16,7 @@
  *
  */
 
-/*int main()
+int main()
 {
 	JeuDomino jeu; //On crée un jeu
 
@@ -25,6 +25,6 @@
 		jeu.jouerUnTour();
 	}
 	jeu.finJeu();
-}*/
+}
 
 
