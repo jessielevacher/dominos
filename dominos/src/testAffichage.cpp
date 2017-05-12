@@ -51,11 +51,12 @@ void testAfficherDomino(){
 
 }
 
-void testafficherPlateau(){
 
+void testafficherPlateau(){
+			//On crée un plateau
 			Plateau plateau;
 
-
+			//On crée les dominos
 			Domino i(6,6);
 			Domino d(6,1);
 			Domino a(2,1);
@@ -63,17 +64,19 @@ void testafficherPlateau(){
 			Domino e(1,6);
 			Domino c(4,1);
 
+			//On affecte les valInf et valSup
 			plateau.setBackDominosPlateau(i);
 			plateau.setValInf(6);
 			plateau.setValSup(6);
 
-
+			//On pose les dominos sur le plateau
 			plateau.setBeginDominosPlateau(d);
 			plateau.setBeginDominosPlateau(a);
 			plateau.setBeginDominosPlateau(b);
 			plateau.setBackDominosPlateau(e);
 			plateau.setBackDominosPlateau(c);
 
+			//On affiche le plateau
 			plateau.afficherPlateau();
 
 }
